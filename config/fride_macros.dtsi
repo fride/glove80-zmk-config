@@ -201,6 +201,18 @@
         bindings = <&macro_tap &kp M>
                  , <&sl MAGIC_T>;
     )
+    ZMK_MACRO(ak_y,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp Y>
+                 , <&sl MAGIC_P>;
+    )
+    ZMK_MACRO(ak_k,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp K>
+                 , <&sl MAGIC_S>;
+    )
 
     // 
     ZMK_MACRO(mg_on,
