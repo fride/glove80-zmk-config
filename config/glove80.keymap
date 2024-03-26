@@ -27,16 +27,30 @@
     #include "fride_behaviors.dtsi"
     #include "fride_combos.dtsi"
 
+    #define NAV_LEFT  &mt LG(LEFT)   LEFT    // tap: left  | long-tap: beginning of line
+    #define NAV_RIGHT &mt LG(RIGHT)  RIGHT   // tap: right | long-tap: end       of line
+    #define NAV_UP    &mt LC(HOME) UP      // tap: up    | long-tap: beginning of document
+    #define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
+    #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
+    #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
+
+
+/*
+    pz xq  h  g  j   #@ .: /* "! '?  
+    c  s  n  t  k   ,; a  e  i  m  
+    b  f  l  d  v   -+ u  o  y  w  
+r   ␣  
+*/
     keymap {
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp Q     &ak_u       &ak_o       &kp Q       &kp BSLH
-                &kp Z          &ak_s    HOME_T      HOME_R      HOME_D      &ak_y                                                                      &kp F      HOME_N    HOME_E      HOME_A      &ak_i       &kp MINUS
-                &kp GRAVE      &kp X    &ak_k       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp Z      &kp H     &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sl l_num  &kp DEL     &kp RALT  &kp RET   &sk LSHIFT             &kp LPAR  &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp Q          AS( P)    AS( X)       AS( H)       AS( G)       AS( J)                                                                      AS( HASH)   AS( DOT)   AS( SLASH)   AS( DQT)     AS( SQT)     AS( BSLH)
+                &kp Z          AS( C)    AS( S)       AS( N)       AS( T)       AS( K)                                                                      AS( COMMA)  AS( A)     AS( E)       AS( I)       AS( M)       AS( MINUS)
+                &sk LSHFT      AS( B)    AS( F)       AS( L)       AS( D)       AS( V)   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    AS( MINUS)  AS( U)     AS( O)       AS( DOT)     AS( SEMI)    &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           AS( R)       &sl l_num  &kp DEL     &kp RALT  &kp RET   NAV_SPACE             &kp LPAR  &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
 
@@ -44,9 +58,9 @@
             bindings = <
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans          &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
-                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     &kp UP        &kp DEL      &kp SLCK        &none
-                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI       &kp PG_UP                                                                             &kp PRCNT    &kp LEFT     &kp DOWN     &kp RIGHT     &kp RIGHT       &none
-                &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
+                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     NAV_UP       &kp DEL      &kp SLCK        &none
+                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI       &kp PG_UP                                                                              &kp PRCNT    NAV_LEFT     NAV_DOWN     NAV_RIGHT     &kp RIGHT       &none
+                &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap    &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };

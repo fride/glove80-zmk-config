@@ -1,5 +1,6 @@
 behaviors {
 
+
     magic: magic_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_HOLD_TAP";
@@ -8,6 +9,17 @@ behaviors {
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
     };
+
+    as: autoshift_hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "AUTOSHIFT_HOLD_TAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    #define AS(keycode) &as LS(keycode) keycode
 
     // Home Row Mods
     hmr: homerow_mods_right { // use on right hand to mod left

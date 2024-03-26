@@ -4,7 +4,9 @@
 
 #define HYPER LC(LS(LG(LALT)))
 
-#define NAV_SPCAE &lt l_nav SPACE
+#define NAV_SPACE &lt l_nav SPACE
+#define NAV_R     &lt l_nav R
+
 
 // layers
 #define DEFAULT    0
@@ -63,3 +65,12 @@ NAME  { \
   >; \
 };
             
+
+            // long-tap action on hold, short-tap action on all interrupts
+#define MT_CORE \
+    flavor = "tap-preferred"; \
+    tapping-term-ms = <220>; \
+    quick-tap-ms = <220>; \
+    hold-trigger-key-positions = <0>;
+
+&mt { MT_CORE };
