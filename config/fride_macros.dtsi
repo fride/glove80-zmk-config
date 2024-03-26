@@ -159,6 +159,48 @@
         bindings = <&macro_tap &kp O>
                  , <&sl MAGIC_A>;
     )
+    ZMK_MACRO(ak_j,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp J>
+                 , <&sl MAGIC_UST>;
+    )
+    ZMK_MACRO(ak_i,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp I>
+                 , <&sl MAGIC_ON>;
+    )
+    ZMK_MACRO(ak_c,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp C>
+                 , <&sl MAGIC_Y>;
+    )
+    ZMK_MACRO(ak_p,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp P>
+                 , <&sl MAGIC_Y>;
+    )
+    ZMK_MACRO(ak_g,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp G>
+                 , <&sl MAGIC_Y>;
+    )
+    ZMK_MACRO(ak_l,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp L>
+                 , <&sl MAGIC_K>;
+    )
+    ZMK_MACRO(ak_m,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp M>
+                 , <&sl MAGIC_T>;
+    )
 
     // 
     ZMK_MACRO(mg_on,

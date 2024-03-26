@@ -25,9 +25,9 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &kp M       &kp L       &kp C       &kp P                                                                      &kp B      &kp Q   &ak_u       &ak_o       &kp Q       &kp BSLH
-                &kp Z          &ak_s    &ak_t       &ak_r       &ak_d       &kp Y                                                                      &kp F      &kp N   &ak_e       &ak_a       &kp I       &kp MINUS
-                &kp GRAVE      &kp X    &kp K       &kp J       &kp G       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
+                &kp Q          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp Q   &ak_u       &ak_o       &kp Q       &kp BSLH
+                &kp Z          &ak_s    &ak_t       &ak_r       &ak_d       &kp Y                                                                      &kp F      &kp N   &ak_e       &ak_a       &ak_i       &kp MINUS
+                &kp GRAVE      &kp X    &ak_s       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
                 &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
             >;
         };
