@@ -1,4 +1,4 @@
-#define my_tapping_term 170
+#define my_tapping_term 380
 #define my_quick_tapping_term 112
 #define my_ak_delay 40
 
@@ -24,6 +24,7 @@
 #define MAGIC_M   14
 #define MAGIC_E   15
 #define MAGIC_P   16
+#define MAGIC_F   17
 
 
 //

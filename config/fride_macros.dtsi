@@ -95,6 +95,8 @@
                 ;
     )
 
+
+
     mod_tab: mod_tab_switcher {
         compatible = "zmk,behavior-macro-one-param";
         wait-ms = <0>;
@@ -212,6 +214,12 @@
         tap-ms = <10>;
         bindings = <&macro_tap &kp K>
                  , <&sl MAGIC_S>;
+    )
+    ZMK_MACRO(ak_n,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp N>
+                 , <&sl MAGIC_F>;
     )
 
     // 
