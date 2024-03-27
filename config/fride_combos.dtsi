@@ -29,6 +29,8 @@
 combos {
     compatible = "zmk,combos";
 
-    COMBO_ANY(TAB,   &kp TAB, 36 37 38)
-    COMBO_ANY(ENTER, &kp ENTER, 41 42 43)
+    COMBO_ANY(TAB,    &kp TAB,    36 37 38)
+    COMBO_ANY(ENTER,  &kp ENTER,  41 42 43)
+    COMBO_ANY(LSHIFT, &skq LSHIFT, 24 25)
+    COMBO_ANY(RSHIFT, &skq RSHIFT, 30 31)
 };

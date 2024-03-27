@@ -13,13 +13,16 @@
 
 #include "fride_config.h"
 
-#define HOME_D &hrm_d LGUI  D 
-#define HOME_R &hrm_r LALT  R
-#define HOME_T &hrm_t LCTRL T
 
-#define HOME_N &hrm_n RGUI  N
-#define HOME_E &hrm_e RALT  E
-#define HOME_A &hrm_a RCTRL A
+#define HOME_T &hml LGUI   T
+#define HOME_N &hml LCTRL  N
+#define HOME_C &hml LSHIFT C
+#define HOME_D &hml LALT   D
+
+#define HOME_A &hmr LGUI   A
+#define HOME_E &hmr LCTRL  E
+#define HOME_I &hmr LSHIFT I
+#define HOME_U &hmr LALT   U
 
 / {    
 
@@ -34,23 +37,16 @@
     #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
     #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 
-
-/*
-    pz xq  h  g  j   #@ .: /* "! '?  
-    c  s  n  t  k   ,; a  e  i  m  
-    b  f  l  d  v   -+ u  o  y  w  
-r   ␣  
-*/
     keymap {
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          AS( P)    AS( X)       AS( H)       AS( G)       AS( J)                                                                      AS( HASH)   AS( DOT)   AS( SLASH)   AS( DQT)     AS( SQT)     AS( BSLH)
-                &kp Z          AS( C)    AS( S)       AS( N)       AS( T)       AS( K)                                                                      AS( COMMA)  AS( A)     AS( E)       AS( I)       AS( M)       AS( MINUS)
-                &sk LSHFT      AS( B)    AS( F)       AS( L)       AS( D)       AS( V)   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    AS( MINUS)  AS( U)     AS( O)       AS( DOT)     AS( SEMI)    &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           AS( R)       &sl l_num  &kp DEL     &kp RALT  &kp RET   NAV_SPACE             &kp LPAR  &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                      &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4         &kp N5                                                                            &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
+                &kp Q          &kp X    &kp W       &kp M       &kp G          &kp J                                                                             &kp HASH   &kp  DOT   &kp  SLASH   &kp  DQT     &kp SQT     &kp  BSLH
+                &kp Q          &kp S    HOME_C      HOME_N      HOME_T         &kp K                                                                             &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Z
+                &sk LSHFT      &kp B    &kp P       &kp L       HOME_D         &kp V   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap          &kp MINUS  HOME_U     &kp  O       &kp Y        &kp F       &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT              &lt l_nav R  &sk LCTRL   &kp BSPC   &kp DEL   &sk LCTRL &lt l_sym SPACE   &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
         };
 
@@ -59,9 +55,19 @@ r   ␣
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans          &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
                 &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     NAV_UP       &kp DEL      &kp SLCK        &none
-                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI       &kp PG_UP                                                                              &kp PRCNT    NAV_LEFT     NAV_DOWN     NAV_RIGHT     &kp RIGHT       &none
+                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &kp PG_UP                                                                              &kp PRCNT    NAV_LEFT     NAV_DOWN     NAV_RIGHT     &kp RIGHT       &none
                 &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap    &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+            >;
+        };
+        l_sym {
+            bindings = <
+                &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans             &kp PAUSE_BREAK
+                &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY    &kp PSCRN
+                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp HASH     &kp DOT      &kp SLASH     &kp N9      &kp COLON          &kp K
+                &trans            &kp N7              &kp N5          &kp N3          &kp N1          &kp PG_UP                                                                             &kp COMMA    &kp N0       &kp N2        &kp N4      &kp N6          &kp J
+                &trans            &kp K_CMENU         &none           &kp F11         &kp N9          &kp PG_DN       &AppSwap    &trans      &to DEFAULT &kp LT      &kp GT      &kp EQUAL &kp MINUS    &kp N8       &kp N2        &kp N3      &kp SLASH          &kp G
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &kp SPACE   &trans      &trans      &kp COMMA   &kp DOT     &kp N0                 &trans       &trans       &trans       &trans             &trans
             >;
         };
         l_num {
@@ -71,7 +77,7 @@ r   ␣
                 &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp PERCENT  &kp N7       &kp N8        &kp N9      &kp COLON          &kp K
                 &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &kp PG_UP                                                                             &kp PLUS     &kp N4       &kp N5        &kp N6      &kp MINUS          &kp J
                 &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap    &trans      &to DEFAULT &kp LT      &kp GT      &kp EQUAL &kp STAR     &kp N1       &kp N2        &kp N3      &kp SLASH          &kp G
-                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &kp COMMA   &kp DOT     &kp N0                 &trans       &trans       &trans       &trans             &trans
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &kp SPACE      &trans      &trans      &kp COMMA   &kp DOT     &kp N0                 &trans       &trans       &trans       &trans             &trans
             >;
         };
 
