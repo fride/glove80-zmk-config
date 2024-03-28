@@ -49,7 +49,7 @@
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                 &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4    &kp DQT                                                                               &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
                 &kp Z          &kp X    &kp W       &kp M       &kp G     &kp DQT                                                                               &kp HASH   &kp  DOT   &kp SQT      &kp  J       &kp B       &kp BSLH
-                &kp Q          &kp S    HOME_C      HOME_N      HOME_T    &kp K                                                                                 &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Q
+                &kp Z          &kp S    HOME_C      HOME_N      HOME_T    &kp K                                                                                 &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Q
                 &sk LSHFT      &kp V    &kp F       &kp L       HOME_D    &kp SLASH   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp MINUS  HOME_U     &kp  O       &kp Y        &kp P       &kp PG_UP
                 &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL                &lt l_nav R  &skq LSHFT  &kp BSPC   &kp DEL   &skq LSHFT &lt l_sym SPACE  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
