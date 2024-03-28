@@ -14,21 +14,7 @@
 #define l_sym      2
 #define l_num      3
 #define MAGIC      4
-#define MAGIC_O    5
-#define MAGIC_Y    6
-#define MAGIC_U    7
-#define MAGIC_ON   8
-#define MAGIC_UST  9
-#define MAGIC_S   10
-#define MAGIC_K   11
-#define MAGIC_T   12
-#define MAGIC_ION 13
-#define MAGIC_A   14
-#define MAGIC_L   15
-#define MAGIC_M   16
-#define MAGIC_E   17
-#define MAGIC_P   18
-#define MAGIC_F   19
+#define l_akM      5
 
 
 //
