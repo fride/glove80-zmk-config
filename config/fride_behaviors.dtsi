@@ -63,4 +63,37 @@ behaviors {
     //     hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>; // right hand allowed
     //     hold-trigger-on-release;             // delay positional check until key-release
     // };
+
+
+    // H digrams
+     lk_th: lk_th { // Th on tap, tion on "linger"
+            compatible = "zmk,behavior-hold-tap";
+            label = "lk_th";
+            #binding-cells = <2>;
+            tapping-term-ms = <my_tapping_term>;
+            quick-tap-ms = <90>;
+//            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&tion>, <&Th>;
+        };
+        lk_sh: lk_sh { // Sh on tap, sion on "linger"
+            compatible = "zmk,behavior-hold-tap";
+            label = "lk_sh";
+            #binding-cells = <2>;
+            tapping-term-ms = <my_tapping_term>;
+            quick-tap-ms = <90>;
+//            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&sion>, <&Sh>;
+        };
+        lk_gh: lk_gh { // Gh on tap, Ght on "linger"
+            compatible = "zmk,behavior-hold-tap";
+            label = "lk_gh";
+            #binding-cells = <2>;
+            tapping-term-ms = <my_tapping_term>;
+            quick-tap-ms = <90>;
+//            global-quick-tap;
+            flavor = "tap-preferred";
+            bindings = <&ght>, <&Gh>;
+        };
 };
