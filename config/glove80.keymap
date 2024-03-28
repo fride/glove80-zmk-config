@@ -48,10 +48,10 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                 &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4    &kp DQT                                                                               &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
-                &kp Z          &kp X    &kp W       &kp M       &kp G     &kp DQT                                                                               &kp HASH   &kp  DOT   &kp SQT      &kp  J       &kp B       &kp BSLH
-                &kp Z          &kp S    HOME_C      HOME_N      HOME_T    &kp K                                                                                 &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Q
-                &sk LSHFT      &kp V    &kp F       &kp L       HOME_D    &kp SLASH   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp MINUS  HOME_U     &kp  O       &kp Y        &kp P       &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL                &lt l_nav R  &skq LSHFT  &kp BSPC   &kp DEL   &skq LSHFT &lt l_sym SPACE  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
+                &kp ESC        AS(X)    AS(W)       AS(M)       AS(G)     AS(DQT)                                                                               AS(HASH)   AS( DOT)   AS(SQT)       AS(J)      AS(B)       &kp BSLH
+                AS(Z)          AS(S)    AS(C)       AS(N)       AS(T)     AS(K)                                                                                 AS(COMMA)  AS(A)       AS(E)        AS(I)      AS(H)       AS(Q)
+                &sk LSHFT      AS(V)    AS(F)       AS(L)       AS(D)     AS(SLASH)  &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp MINUS   AS(U)       AS(O)        AS(Y)      AS(P)       &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL               &lt l_nav R  &skq LSHFT  &kp BSPC   &kp DEL   &skq LSHFT &lt l_sym SPACE  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
         };
 
@@ -60,7 +60,7 @@
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans          &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
                 &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     NAV_UP       &kp DEL      &kp SLCK        &none
-                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &kp PG_UP                                                                              &kp PRCNT    NAV_LEFT     NAV_DOWN     NAV_RIGHT     &kp RIGHT       &none
+                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &kp PG_UP                                                                             &kp PRCNT    NAV_LEFT     NAV_DOWN     NAV_RIGHT     &kp RIGHT       &none
                 &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap    &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
