@@ -36,17 +36,22 @@
     #define NAV_DOWN  &mt LC(END)  DOWN    // tap: down  | long-tap: end       of document
     #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
     #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
-
+/*
+    xz  wq m  g "!    #@ .: '? j  b
+     s   c n  t  k    ,;  a  e i  h
+     v   p l  d /*    -+  u  o y  f
+              r   ␣  
+*/
     keymap {
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                      &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4         &kp N5                                                                            &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
-                &kp Q          &kp X    &kp W       &kp M       &kp G          &kp J                                                                             &kp HASH   &kp  DOT   &kp  SLASH   &kp  DQT     &kp SQT     &kp  BSLH
-                &kp Q          &kp S    HOME_C      HOME_N      HOME_T         &kp K                                                                             &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Z
-                &sk LSHFT      &kp B    &kp P       &kp L       HOME_D         &kp V   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap          &kp MINUS  HOME_U     &kp  O       &kp Y        &kp F       &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT              &lt l_nav R  &sk LCTRL   &kp BSPC   &kp DEL   &sk LCTRL &lt l_sym SPACE   &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                 &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4    &kp DQT                                                                               &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
+                &kp Z          &kp X    &kp W       &kp M       &kp G     &kp DQT                                                                               &kp HASH   &kp  DOT   &kp SQT      &kp  J       &kp B       &kp BSLH
+                &kp Q          &kp S    HOME_C      HOME_N      HOME_T    &kp K                                                                                 &kp COMMA  HOME_A     HOME_E       HOME_I       &kp H       &kp Q
+                &sk LSHFT      &kp V    &kp P       &kp L       HOME_D    &kp SLASH   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap          &kp MINUS  HOME_U     &kp  O       &kp Y        &kp F       &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL                &lt l_nav R  &sk LCTRL   &kp BSPC   &kp DEL   &sk LCTRL &lt l_sym SPACE   &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
         };
 
@@ -102,7 +107,7 @@
         MAGIC_LAYER(MAGIC_T   , &kp T)
         MAGIC_LAYER(MAGIC_ION , &mg_ion)
         MAGIC_LAYER(MAGIC_A   , &kp A)
-        MAGIC_LAYER(MAGIC_L   , &kp L)
+        MAGIC_LAYER(MAGIC_L   , &kp L)        
         MAGIC_LAYER(MAGIC_M   , &kp M)
         MAGIC_LAYER(MAGIC_E   , &kp E)
         MAGIC_LAYER(MAGIC_P   , &kp P)
