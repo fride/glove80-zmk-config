@@ -27,7 +27,18 @@ behaviors {
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    // slow version
+    asp: autoshift_hold_tap_slow {
+      compatible = "zmk,behavior-hold-tap";
+      label = "AUTOSHIFT_HOLD_TAP_SLOW";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    }; 
     #define AS(keycode) &as LS(keycode) keycode
+    #define ASP(keycode) &asp LS(keycode) keycode
 
     // Home Row Mods
     hmr: homerow_mods_right { // use on right hand to mod left
@@ -96,4 +107,19 @@ behaviors {
             flavor = "tap-preferred";
             bindings = <&ght>, <&Gh>;
         };
+
+     CmmaSemi: CmmaSemi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "comma_semi";
+            #binding-cells = <0>;
+            bindings = <&kp CMMA>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    DotColn: DotColn {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DotColn";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
 };

@@ -221,4 +221,12 @@
                     , <&macro_tap &kp C &kp H>
                 ;
         };
+
+         ZMK_MACRO(typeSemi,
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&macro_release &kp LSHFT>
+                , <&macro_tap &kp SEMICOLON>
+                ;
+        )
  };
