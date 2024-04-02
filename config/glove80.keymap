@@ -37,21 +37,23 @@
     #define NAV_BSPC  &mt LC(BSPC) BSPC    // tap: bspc  | long-tap: delete word backward
     #define NAV_DEL   &mt LC(DEL)  DEL     // tap: del   | long-tap: delete word forward
 /*
-    xz  wq m  g "!    #@ .: '? j  b
-     s   c n  t  k    ,;  a  e i  h
-     v   p l  d /*    -+  u  o y  f
-              r   ␣  
+   https://github.com/jcmkk3/bird-layout
+
+    x c l f v   z y o u '
+    r s n t p   k h e i a
+    q w m g b   j d , . /
+
 */
     keymap {
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                 &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4    &kp DQT                                                                               &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
-                &kp Z          &kp X    &kp W       &kp M       &kp G     &kp DQT                                                                               &kp HASH   &DotColn   &kp SQT      &kp  J       &kp B       &kp BSLH
-                &kp Z          &kp S    HOME_C      HOME_N      HOME_T    &kp K                                                                                 &CmmaSemi  HOME_A     HOME_E       HOME_I       &kp H       &kp Q
-                &sk LSHFT      &kp V    &kp F       &kp L       HOME_D    &kp SLASH   &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp MINUS  HOME_U     &kp  O       &kp Y        &kp P       &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL                &lt l_nav R  &skq LSHFT  &kp BSPC   &kp DEL   &skq LSHFT &lt l_sym SPACE  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4   &kp DQT                                                                                &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
+                &kp Z          &kp X    &kp C       &kp L       &kp F    &kp V                                                                                  &kp Z     &kp Y       &kp O        &kp  U       &kp SQT     &kp SEMI
+                &kp Z          &kp R    &kp S       &kp N      HOME_T    &kp P                                                                                  &kp K     &kp H       HOME_E       HOME_I       &kp A       &kp MINUS
+                &sk LSHFT      &kp Q    &kp W       &kp M       &kp G    &kp B        &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp J     &kp D       &kp  COMMA   &kp DOT      &kp SLASH   &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL          &lt l_nav SPACE   &skq LSHFT   &kp BSPC   &kp DEL   &skq LSHFT  &skq LSHFT  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
         };
 
