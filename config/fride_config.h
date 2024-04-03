@@ -4,6 +4,8 @@
 
 #define HYPER LC(LS(LG(LALT)))
 
+#define HOMEROW &kp LC(LS(LA(SPACE)))
+
 #define NAV_SPCAE &lt l_nav SPACE
 
 // layers
