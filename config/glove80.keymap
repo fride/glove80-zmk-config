@@ -13,30 +13,39 @@
 
 #include "fride_config.h"
 
-#define HOME_D &hrm_d LGUI  D 
-#define HOME_R &hrm_r LALT  R
-#define HOME_T &hrm_t LCTRL T
+#define HOME_H &hml LSFT  H
+#define HOME_T &hml LGUI  T
+#define HOME_S &hml LALT  S
+#define HOME_N &hml LCTRL N
 
-#define HOME_N &hrm_n RGUI  N
-#define HOME_E &hrm_e RALT  E
-#define HOME_A &hrm_a RCTRL A
+#define HOME_A &hmr RSFT  A
+#define HOME_E &hmr RGUI  E
+#define HOME_I &hmr RALT  I
+#define HOME_C &hmr RCTRL C
+
 
 / {    
 
     #include "fride_macros.dtsi"
     #include "fride_behaviors.dtsi"
     #include "fride_combos.dtsi"
+/*
 
+   B   Y   O   U           L   D   W   V    Z
+   C   I   E   A           H   T   S   N    Q
+   G   X   J   K           R   M   F   P
+
+*/
     keymap {
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp Q     &ak_u       &ak_o       &kp Q       &kp BSLH
-                &kp Z          &ak_s    HOME_T      HOME_R      HOME_D      &ak_y                                                                      &kp F      HOME_N    HOME_E      HOME_A      &ak_i       &kp MINUS
-                &kp GRAVE      &kp X    &ak_k       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp Z      &kp H     &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sl l_num  &kp DEL     &kp RALT  &kp RET   &skq LSHIFT             &kp LPAR  &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                       &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp Q          &kp V    &kp W       &kp D       &kp L       &kp SQT                                                                      &kp SEMI   &kp U     &kp O       &kp Y       &kp B       &kp Q
+                &kp EQUAL      HOME_N   HOME_S      HOME_T      HOME_H      &kp COMMA                                                                    &kp DOT    HOME_A    HOME_E      HOME_I      HOME_C      &kp Z
+                &kp GRAVE      &kp P    &kp F       &kp M       &kp R       &kp MINUS &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap   &kp SLASH  &kp K     &kp J       &kp X       &kp G       &kp PG_UP
+                &magic MAGIC 0 &kp PIPE &kp BSLH    &kp PIPE    &kp SLASH             NAV_SPCAE    &sl l_num  &kp DEL     &kp RALT  &kp RET   &skq LSHIFT           &kp LPAR  &kp LBKT    &kp RBKT    &kp LPAR    &magic MAGIC 0
             >;
         };
 
