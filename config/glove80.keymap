@@ -19,10 +19,11 @@
 #define HOME_C &hml LSHIFT C
 #define HOME_D &hml LALT   D
 
+#define HOME_H &hmr RSHFT  H
 #define HOME_A &hmr LGUI   A
 #define HOME_E &hmr LCTRL  E
 #define HOME_I &hmr LSHIFT I
-#define HOME_U &hmr LALT   U
+
 
 / {    
 
@@ -51,7 +52,7 @@
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                 &kp F6     &kp F7       &kp F8       &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4   &kp DQT                                                                                &kp N6     &kp N7     &kp N8       &kp N9       &kp N0      &kp MINUS
                 &kp Z          &kp X    &kp C       &kp L       &kp F    &kp V                                                                                  &kp Z     &kp Y       &kp O        &kp  U       &kp SQT     &kp SEMI
-                &kp Z          &kp R    &kp S       &kp N      HOME_T    &kp P                                                                                  &kp K     &kp H       HOME_E       HOME_I       &kp A       &kp MINUS
+                &kp Z          &kp R    &kp S       &kp N      HOME_T    &kp P                                                                                  &kp K     HOME_H      HOME_E       HOME_I       &kp A       &kp MINUS
                 &sk LSHFT      &kp Q    &kp W       &kp M       &kp G    &kp B        &kp LSHFT    &kp LCTRL   &kp L      &kp LGUI  &kp  RCTRL &AppSwap         &kp J     &kp D       &kp  COMMA   &kp DOT      &kp SLASH   &kp PG_UP
                 &magic MAGIC 0 &kp HOME &kp LT     &kp GT    &kp EQUAL          &lt l_nav SPACE   &skq LSHFT   &kp BSPC   &kp DEL   &skq LSHFT  &skq LSHFT  &kp LPAR  &kp LBKT    &kp LBKT     &kp RBKT     &magic      MAGIC 0
             >;
