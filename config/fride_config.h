@@ -4,7 +4,8 @@
 
 #define HYPER LC(LS(LG(LALT)))
 
-#define NAV_SPCAE &lt l_nav SPACE
+#define NAV_SPCAE &lt l_nav SPACE  
+#define NAV_R     &lt l_nav R
 
 // layers
 #define DEFAULT    0
