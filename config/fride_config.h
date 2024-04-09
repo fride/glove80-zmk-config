@@ -11,21 +11,8 @@
 #define l_nav      1
 #define l_num      2
 #define MAGIC      3
-#define MAGIC_O    4
-#define MAGIC_Y    5
-#define MAGIC_U    6
-#define MAGIC_ON   7
-#define MAGIC_UST  8
-#define MAGIC_S    9
-#define MAGIC_K   10
-#define MAGIC_T   11
-#define MAGIC_ION 12
-#define MAGIC_A   13
-#define MAGIC_L   14
-#define MAGIC_M   15
-#define MAGIC_E   16
-#define MAGIC_P   17
-#define MAGIC_F   18
+#define l_umlaut   4
+
 
 
 //

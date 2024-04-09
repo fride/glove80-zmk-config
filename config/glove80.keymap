@@ -11,17 +11,32 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#define HOST_OS 2
+
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/international_chars/greek.dtsi"
+#include "../zmk-nodefree-config/international_chars/german.dtsi"
 #include "fride_config.h"
 
-#define HOME_T &hml LGUI  T 
-#define HOME_N &hml LALT  N
-#define HOME_R &hml LCTRL R
-#define HOME_S &hml LSHFT S
 
-#define HOME_C &hmr RGUI  C
-#define HOME_A &hmr RALT  A
-#define HOME_I &hmr RCTRL I
-#define HOME_X &hmr RSHFT MINUS
+#define HOME_T &hml LSHFT  T 
+#define HOME_N &hml LGUI  N
+#define HOME_R &hml LALT R
+#define HOME_S &hml LCTRL  S
+
+#define HOME_C &hmr RSHFT C
+#define HOME_E &hmr RGUI  E
+#define HOME_A &hmr LALT  A
+#define HOME_I &hmr LCTRL I
+
+&sl {  // sticky-layer config
+    ignore-modifiers;          // allow chording sticky mods & layers
+};
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -43,10 +58,10 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &kp L       &kp H       &kp K       &kp Q                                                                      &kp J      &kp F     &kp O       &kp U       &kp COMMA   &kp BSLH
-                &kp Z          HOME_S   HOME_R      HOME_N      HOME_T      &kp W                                                                      &kp Y      HOME_C    HOME_A      HOME_I      HOME_X       &kp MINUS
+                &kp Q          &kp V    &kp L       &kp H       &kp K       &kp Q                                                                      &kp J      &kp F     &kp U       &kp O       &kp COMMA   &kp BSLH
+                &kp Z          HOME_S   HOME_R      HOME_N      HOME_T      &lt l_umlaut W                                                             &kp Y      HOME_C    HOME_E      HOME_A      HOME_I       &kp MINUS
                 &kp GRAVE      &kp Z    &kp X       &kp M       &kp D       &kp B   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp P      &kp G     &kp SQT     &kp SEMI    &kp DOT      &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL     &kp RALT  &sk RSHFT &kp E                  &kp LPAR  &kp LBKT    &kp LBKT   &kp RBKT    &magic MAGIC 0
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL     &kp RALT  &sk RSHFT &sk LSFT              &kp LPAR  &kp LBKT    &kp LBKT   &kp RBKT    &magic MAGIC 0
             >;
         };
 
@@ -82,20 +97,15 @@
             >;
         };
 
-        MAGIC_LAYER(MAGIC_O,    &kp O)
-        MAGIC_LAYER(MAGIC_Y,    &kp Y)
-        MAGIC_LAYER(MAGIC_U   , &kp U)
-        MAGIC_LAYER(MAGIC_ON  , &mg_on)
-        MAGIC_LAYER(MAGIC_UST , &mg_ust)
-        MAGIC_LAYER(MAGIC_S   , &kp S)
-        MAGIC_LAYER(MAGIC_K   , &kp K)
-        MAGIC_LAYER(MAGIC_T   , &kp T)
-        MAGIC_LAYER(MAGIC_ION , &mg_ion)
-        MAGIC_LAYER(MAGIC_A   , &kp A)
-        MAGIC_LAYER(MAGIC_L   , &kp L)
-        MAGIC_LAYER(MAGIC_M   , &kp M)
-        MAGIC_LAYER(MAGIC_E   , &kp E)
-        MAGIC_LAYER(MAGIC_P   , &kp P)
-        MAGIC_LAYER(MAGIC_F   , &kp F)
+        l_umlaut  { 
+            bindings = < 
+                    &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK 
+                    &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans 
+                    &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &trans       &trans       &trans        &de_eszett      &trans 
+                    &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &trans       &trans       &trans        &trans          &trans 
+                    &trans            &trans              &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans      &trans      &trans    &trans       &trans       &de_ae       &de_oe        &de_ue          &trans 
+                    &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &trans       &trans       &trans        &trans          &trans 
+            >; 
+        };
     };
 };

@@ -38,6 +38,7 @@ behaviors {
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>; // right hand allowed
     };
+    
     as: auto_shift {
         compatible = "zmk,behavior-hold-tap";
         label = "AUTO_SHIFT";
