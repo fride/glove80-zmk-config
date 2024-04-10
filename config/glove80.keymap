@@ -12,12 +12,40 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define HOST_OS 2
+#define QUICK_TAP_MS 175
 
 #include "../zmk-nodefree-config/helper.h"
 #include "../zmk-nodefree-config/international_chars/greek.dtsi"
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
 #include "fride_config.h"
 
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
+&sl {  // sticky-layer config
+    ignore-modifiers;          // allow chording sticky mods & layers
+};
+
+&lt {  // layer-tap config
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_BEHAVIOR(NAME, hold_tap, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        require-prior-idle-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+MAKE_HRM(hml, &kp, &kp, RIGHT_HAND_KEYS THUMB_KEYS)  // left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, LEFT_HAND_KEYS THUMB_KEYS)  // right-hand HRMs
 
 #define HOME_T &hml LSHFT  T 
 #define HOME_N &hml LGUI  N
@@ -25,18 +53,16 @@
 #define HOME_S &hml LCTRL  S
 
 #define HOME_C &hmr RSHFT C
-#define HOME_E &hmr RGUI  E
-#define HOME_A &hmr LALT  A
-#define HOME_I &hmr LCTRL I
+#define HOME_A &hmr RGUI  A
+#define HOME_I &hmr LALT  I
+#define HOME_REP &hmr LCTRL &key_repeat
 
-&sl {  // sticky-layer config
-    ignore-modifiers;          // allow chording sticky mods & layers
-};
-
-&sk {  // sticky-key config
-    release-after-ms = <900>;  // release after 0.6s
-    quick-release;             // no double capitalization when rolling keys
-};
+ZMK_BEHAVIOR(auto_shift, hold_tap,
+    flavor = "tap-preferred";    
+    tapping_term_ms = <QUICK_TAP_MS>;
+    quick_tap_ms = <0>;    
+    bindings = <&kp>, <&kp>;
+)
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -58,10 +84,10 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &kp L       &kp H       &kp K       &kp Q                                                                      &kp J      &kp F     &kp U       &kp O       &kp COMMA   &kp BSLH
-                &kp Z          HOME_S   HOME_R      HOME_N      HOME_T      &lt l_umlaut W                                                             &kp Y      HOME_C    HOME_E      HOME_A      HOME_I       &kp MINUS
+                &kp Q          &kp V    &kp L       &kp H       &kp K       &kp Q                                                                      &kp J      &kp F     &kp O       &kp U       &kp COMMA   &kp BSLH
+                &kp Z          HOME_S   HOME_R      HOME_N      HOME_T      &lt l_umlaut W                                                             &kp Y      HOME_C    HOME_A      HOME_I      HOME_REP     &kp MINUS
                 &kp GRAVE      &kp Z    &kp X       &kp M       &kp D       &kp B   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp P      &kp G     &kp SQT     &kp SEMI    &kp DOT      &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL     &kp RALT  &sk RSHFT &sk LSFT              &kp LPAR  &kp LBKT    &kp LBKT   &kp RBKT    &magic MAGIC 0
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL    &kp RALT  &sk RSHFT &kp E                 &kp LPAR  &kp LBKT    &kp LBKT   &kp RBKT    &magic MAGIC 0
             >;
         };
 
