@@ -20,4 +20,15 @@ behaviors {
         ignore-modifiers;
     };    
 
+    ZMK_MACRO(rl,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&macro_tap &kp R &kp L>;
+    )
+    
+    ZMK_MACRO(you,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&macro_tap &kp Y &kp U &kp U>;
+    )
 };

@@ -45,26 +45,33 @@
         hold-trigger-on-release; \
     )
 MAKE_HRM(hml, &kp, &kp, RIGHT_HAND_KEYS THUMB_KEYS)  // left-hand HRMs
-MAKE_HRM(hmr, &kp, &kp, LEFT_HAND_KEYS THUMB_KEYS)  // right-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, LEFT_HAND_KEYS  THUMB_KEYS)  // right-hand HRMs
+
+#define MEH LC(LS(LALT))
 
 #define HOME_T &hml LSHFT  T 
 #define HOME_N &hml LGUI  N
 #define HOME_R &hml LALT R
 #define HOME_S &hml LCTRL  S
+#define HOME_D &hml MEH D
 
 #define HOME_C &hmr RSHFT C
 #define HOME_A &hmr RGUI  A
 #define HOME_I &hmr LALT  I
-#define HOME_REP &hmr LCTRL &key_repeat
+#define HOME_REP &hmr LCTRL SLASH
+#define HOME_G &hmr MEH G
 
-ZMK_BEHAVIOR(auto_shift, hold_tap,
-    flavor = "tap-preferred";    
-    tapping_term_ms = <QUICK_TAP_MS>;
-    quick_tap_ms = <0>;    
-    bindings = <&kp>, <&kp>;
-)
+#define ZERO  &hmr RSHFT N0
+#define TWO   &hmr RGUI N2
+#define FOUR  &hmr LALT N4
+#define SIX   &hmr RCTL N6
+#define EIGHT &hmr MEH N8
 
-#define AS(keycode) &as LS(keycode) keycode
+#define ONE   &hml LSHFT N0
+#define THREE &hml LGUI N3
+#define FIVE  &hml LALT N5
+#define SEVEN &hml LCTL N6
+#define NINE  &hml MEH N9
 
 / {    
 
@@ -85,9 +92,9 @@ ZMK_BEHAVIOR(auto_shift, hold_tap,
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
                 &kp Q          &kp V    &kp L       &kp H       &kp K       &kp Q                                                                      &kp J      &kp F     &kp O       &kp U       &kp COMMA   &kp BSLH
-                &kp Z          HOME_S   HOME_R      HOME_N      HOME_T      &lt l_umlaut W                                                             &kp Y      HOME_C    HOME_A      HOME_I      HOME_REP     &kp MINUS
-                &kp GRAVE      &kp Z    &kp X       &kp M       &kp D       &kp B   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp P      &kp G     &kp SQT     &kp SEMI    &kp DOT      &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL    &kp RALT  &sk RSHFT &kp E                 &kp LPAR  &kp LBKT    &kp LBKT   &kp RBKT    &magic MAGIC 0
+                &kp V          HOME_S   HOME_R      HOME_N      HOME_T      &lt l_umlaut W                                                             &kp Y      HOME_C    HOME_A      HOME_I      HOME_REP    &kp MINUS
+                &kp GRAVE      &kp Z    &kp X       &kp M       HOME_D      &kp B   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp P      HOME_G    &kp SQT     &kp SEMI    &kp DOT     &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sk LSHFT   &kp DEL    &kp RALT  &sk RSHFT &kp E                  &kp LPAR  &kp LBKT    &kp LBKT    &kp RPAR    &magic MAGIC 0
             >;
         };
 
@@ -104,11 +111,11 @@ ZMK_BEHAVIOR(auto_shift, hold_tap,
         l_num {
             bindings = <
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans             &kp PAUSE_BREAK
-                &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY    &kp PSCRN
-                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp PERCENT  &kp N7       &kp N8        &kp N9      &kp COLON          &kp K
-                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &kp PG_UP                                                                             &kp PLUS     &kp N4       &kp N5        &kp N6      &kp MINUS          &kp J
-                &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap    &trans      &to DEFAULT &kp LT      &kp GT      &kp EQUAL &kp STAR     &kp N1       &kp N2        &kp N3      &kp SLASH          &kp G
-                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &kp COMMA   &kp DOT     &kp N0                 &trans       &trans       &trans       &trans             &trans
+                &trans            &trans              &trans          &trans          &trans         &kp HOME                                                                              &kp LPAR      &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY    &kp PSCRN
+                &trans            &trans              &none           &kp UP          &none          &kp END                                                                               &kp PERCENT   &kp N7       &kp N8       &kp N9        &kp COMMA          &kp K
+                &trans            SEVEN               FIVE            THREE           ONE            &kp PG_UP                                                                             &kp PLUS      ZERO         TWO          FOUR          SIX                &kp J
+                &trans            &kp K_CMENU         &none           &kp F11         NINE           &kp PG_DN       &AppSwap    &trans      &to DEFAULT &kp LT      &kp GT      &kp EQUAL &kp STAR      EIGHT        &kp N2       &kp N3        &kp DOT            &kp G
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &kp COMMA   &kp DOT     &kp N0                 &trans       &trans       &trans        &trans             &trans
             >;
         };
 
