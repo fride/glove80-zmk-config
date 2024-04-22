@@ -17,14 +17,6 @@
 #include "../zmk-nodefree-config/international_chars/german.dtsi"
 #include "../zmk-nodefree-config/international_chars/greek.dtsi"
 
-#define HOME_D &hrm_d LGUI  D 
-#define HOME_R &hrm_r LALT  R
-#define HOME_T &hrm_t LCTRL T
-
-#define HOME_N &hrm_n RGUI  N
-#define HOME_E &hrm_e RALT  E
-#define HOME_A &hrm_a RCTRL A
-
 ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&sk LSHFT>, <&caps_word>;
@@ -32,6 +24,13 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
 
 / {    
 
+/* 
+    recurva-colstag                recurva-colstag2
+    f r d p v  q m u o y           f r d p v  q l u o y
+    s n t c b  . h e a i           s n t c b  m h e a i
+    z x k g w  j l ; ' ,           z x k g w  j . ; ' ,
+
+*/
     #include "fride_macros.dtsi"
     #include "fride_behaviors.dtsi"
     #include "fride_combos.dtsi"
@@ -40,12 +39,12 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6    &kp F7      &kp F8      &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7    &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp Q          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &sl l_uc  &ak_u       &ak_o       &kp Q       &kp BSLH
-                &kp Z          &ak_s    HOME_T      HOME_R      HOME_D      &ak_y                                                                      &kp F      HOME_N    HOME_E      HOME_A      &ak_i       &kp MINUS
-                &kp GRAVE      &kp X    &ak_k       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp Z      &kp H     &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sl l_num  &kp DEL     &kp RALT  &kp RET   &ss_cw                 &kp LPAR  &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp F1         &kp F2       &kp F3      &kp F4      &kp F5                                                                                            &kp F6       &kp F7      &kp F8      &kp F9      &kp F10
+                &kp EQUAL      &kp N1       &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7       &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp Q          &kp F        &kp R       &kp D       &kp P       &kp V                                                                      &kp Q      &kp M        &kp U       &kp O       &kp Y       &kp BSLH
+                &kp Z          &hml LCTRL S &hml LALT N &hml LGUI T &hml LSFT C &kp B                                                                      &kp DOT    &hmr RSFT H  &hmr RGUI E &hmr LALT A &hmr RCTL I &kp MINUS
+                &kp GRAVE      &kp Z        &kp X       &kp K       &kp G       &kp W   &kp LSHFT   &kp LCTRL   &kp L      &kp LGUI  &kp RCTRL &AppSwap    &kp J      &kp L        &kp SEMI    &kp SQT     &kp COMMA    &kp PG_UP
+                &magic MAGIC 0 &kp HOME     &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &sl l_num  &kp DEL     &kp RALT  &kp RET   &ss_cw                 &kp LPAR     &kp LBKT    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
 
