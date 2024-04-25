@@ -43,7 +43,7 @@ behaviors {
     // Home Row Mods
     hmr: homerow_mods_right { // use on right hand to mod left
         compatible = "zmk,behavior-hold-tap";
-        label = "homerow_mods";
+        label = "homerow_mods_right";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "balanced";
@@ -53,7 +53,7 @@ behaviors {
 
     hml: homerow_mods_left { // use on left hand to mod right
         compatible = "zmk,behavior-hold-tap";
-        label = "homerow_mods";
+        label = "homerow_mods_left";
         #binding-cells = <2>;
         tapping-term-ms = <my_tapping_term>;
         flavor = "balanced";
