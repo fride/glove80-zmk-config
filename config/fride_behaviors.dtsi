@@ -1,0 +1,41 @@
+behaviors {
+
+    magic: magic_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAGIC_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&rgb_ug_status_macro>;
+    };
+
+    skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+        ignore-modifiers;
+    };
+
+    // Home Row Mods
+    hmr: homerow_mods_right { // use on right hand to mod left
+        compatible = "zmk,behavior-hold-tap";
+        label = "homerow_mods-right";
+        #binding-cells = <2>;
+        tapping-term-ms = <my_tapping_term>;
+        flavor = "balanced";
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>; // left hand allowed
+    };
+
+    hml: homerow_mods_left { // use on left hand to mod right
+        compatible = "zmk,behavior-hold-tap";
+        label = "homerow_mods-left";
+        #binding-cells = <2>;
+        tapping-term-ms = <my_tapping_term>;
+        flavor = "balanced";
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>; // right hand allowed
+    };
+};
