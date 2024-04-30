@@ -38,4 +38,29 @@ behaviors {
         bindings = <&kp>, <&kp>;
         hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>; // right hand allowed
     };
+    // home row layer switches.
+    hll: home_row_layer_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "home_layer_left";
+        #binding-cells = <2>;
+        tapping-term-ms = <my_tapping_term>;
+        flavor = "balanced";
+        bindings = <&mo>, <&kp>;
+        hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>; // right hand allowed
+    };
+    hlr: home_row_layer_right {
+        compatible = "zmk,behavior-hold-tap";
+        label = "home_layer_right";
+        #binding-cells = <2>;
+        tapping-term-ms = <my_tapping_term>;
+        flavor = "balanced";
+        bindings = <&mo>, <&kp>;
+        hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>; // right hand allowed
+    };
+
+    prog_caps: prog_caps {
+        compatible = "zmk,behavior-caps-word";
+        #binding-cells = <0>;
+        continue-list = <UNDERSCORE>, <MINUS>;
+    };
 };
