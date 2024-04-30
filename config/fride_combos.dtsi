@@ -39,7 +39,8 @@ combos {
     COMBO_ANY(ENTER,    &kp ENTER,    41 42 43)
     COMBO_ANY(SEMI,     &kp ENTER,    60 61)
 
-    COMBO_ANY(lshif,    &skq LSFT,    RT2 RT3)
+    COMBO_ANY(lshift,   &skq LSFT,    LT2 LT3)
+    COMBO_ANY(rshift,   &skq RSFT,    RT2 RT3)
     COMBO_ANY(LCTL,     &skq LCTL,    LM3 LM2)
     COMBO_ANY(RCTL,     &skq LCTL,    RM2 RM3)
 
