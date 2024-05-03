@@ -84,9 +84,9 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
                         &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9        &kp F10
                         &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6     &kp N7         &kp N8         &kp N9         &kp N0        &kp MINUS
                         &kp Q          &kp V          &kp L          &kp H          &hml HYPER G   &kp P                                                                           &kp X      &hmr HYPER F   &kp O          &kp U          &kp COMMA     &kp BSLH
-                        &kp Q          &hml LGUI S    &hml LALT R    &hml LCTL N    &hml LSFT T    &kp B                                                                           &kp Y      &hmr RSFT C    &hmr RCTL A    &hmr LALT I    &hmr RGUI MINUS  &kp SEMI
+                        &kp Q          &hml LGUI S    &hml LALT R    &hml LCTL N    &hml LSFT T    &kp B                                                                           &kp Y      &hmr RSFT C    &hmr RCTL E    &hmr LALT I    &hmr RGUI A   &kp SEMI
                         &kp GRAVE      &kp Z          &kp J          &kp  M         &hml MEH D     &kp K   HYPER_TAB   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp SLASH &hmr MEH W      &kp SQT        &kp SLASH      &kp DOT       &kp PG_UP
-                        &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &kp ENTER   &lr l_num 0 &lt l_num E            &kp UP         &kp DOWN        &kp LBKT       &kp RBKT      &magic MAGIC 0
+                        &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 SK(LSFT)                   &kp LPAR        &kp RPAR       &kp LBKT       &kp RBKT      &magic MAGIC 0
                     >;
                 };
         l_alt {
