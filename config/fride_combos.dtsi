@@ -46,6 +46,10 @@ combos {
 
     COMBO_ANY(esc,      &kp ESC,    LM2 LM1)
     COMBO_ANY(colon,    &kp COLON,  RM1 RM2)
+    COMBO_ANY(tog_num,  &tog l_num, RT1 RT2 RT3)
+
+    COMBO_ANY(one,      &kp N1,     RH2 LM1)
+
 
     // COMBO_ANY(at,       &kp AT,       LT3 LM3)
     // COMBO_ANY(hash,     &kp HASH,     LT2 LM2)

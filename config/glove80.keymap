@@ -13,19 +13,27 @@
 
 #define HOST_OS 2
 #define QUICK_TAP_MS 175
+
+#define APP_SWAP    &kp LG(TAB)
+#define WIN_SWAP    &kp LG(GRAVE)
+#define ALFRED      &kp LG(SPC)
+
+
 #define HYPER LC(LS(LG(LALT)))
 #define MEH   LS(LC(LALT))
 #define NAV_SPACE &lt l_nav SPACE
 #define MEH_SPACE &mt MEH SPACE
 #define HYPER_TAB &mt HYPER TAB
 
-
+#define SK(K) &nk K K
 // layers
 #define DEFAULT    0
-#define l_nav      1
-#define l_num      2
-#define l_fun      3
-#define MAGIC      4
+#define l_alt      1
+#define l_qwerty   2
+#define l_nav      3
+#define l_num      4
+#define l_fun      5
+#define MAGIC      6
 
 #include "../zmk-nodefree-config/helper.h"
 #include "fride_config.h"
@@ -39,7 +47,6 @@ ZMK_BEHAVIOR(ss_cw, tap_dance,
     tapping-term-ms = <200>;
     bindings = <&skq LSHFT>, <&caps_word>;
 )
-
 
 
 // reuse basic mod-morph scheme
@@ -69,36 +76,38 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
     #include "fride_macros.dtsi"
     #include "fride_behaviors.dtsi"
     #include "fride_combos.dtsi"
- /*
 
-  f l h v z  ' w u o y  
-  s r n t k  c d e a i ;
-  x j b m q  p g , . /
-
-   #define HOME_D &hrm_d LGUI  D 
-#define HOME_R &hrm_r LALT  R
-#define HOME_T &hrm_t LCTRL T
-
-#define HOME_N &hrm_n RGUI  N
-#define HOME_E &hrm_e RALT  E
-#define HOME_A &hrm_a RCTRL A
-
-
-*/
     keymap {
         compatible = "zmk,keymap";
-        // q w f p b   j l u y ;
-        // a r s t g   m n e i o
-        // z x c d v   k h , . /
-        //
-     default_layer {
-               bindings = <
+         default_layer {
+                    bindings = <
+                        &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9        &kp F10
+                        &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6     &kp N7         &kp N8         &kp N9         &kp N0        &kp MINUS
+                        &kp Q          &kp V          &kp L          &kp H          &hml HYPER G   &kp P                                                                           &kp X      &hmr HYPER F   &kp O          &kp U          &kp COMMA     &kp BSLH
+                        &kp Q          &hml LGUI S    &hml LALT R    &hml LCTL N    &hml LSFT T    &kp B                                                                           &kp Y      &hmr RSFT C    &hmr RCTL A    &hmr LALT I    &hmr RGUI MINUS  &kp SEMI
+                        &kp GRAVE      &kp Z          &kp J          &kp  M         &hml MEH D     &kp K   HYPER_TAB   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp SLASH &hmr MEH W      &kp SQT        &kp SLASH      &kp DOT       &kp PG_UP
+                        &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &kp ENTER   &lr l_num 0 &lt l_num E            &kp UP         &kp DOWN        &kp LBKT       &kp RBKT      &magic MAGIC 0
+                    >;
+                };
+        l_alt {
+            bindings = <
                 &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                  &kp F6         &kp F7         &kp F8         &kp F9        &kp F10
                 &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                        &kp N6     &kp N7         &kp N8         &kp N9         &kp N0        &kp MINUS
                 &kp Q          &kp V          &kp L          &kp H          &kp G          &kp Q                                                                         &kp J      &kp F          &kp O          &kp U          &kp COMMA     &kp BSLH
-                &kp Z          &kp S          &kp R          &kp N          &kp T          &kp B                                                                         &kp Y      &kp C          &kp A          &kp I          &kp SEMI      &kp SEMI
+                &kp Z          &hml LGUI S    &hml LALT R    &hml LCTL N    &hml LSFT T    &kp B                                                                         &kp Y      &hmr RSFT C    &hmr RCTL A    &hmr LALT I    &hmr RGUI SEMI      &kp SEMI
                 &kp GRAVE      &kp Z          &kp X          &kp  M         &kp D          &kp K   HYPER_TAB   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL &kp SQT      &kp P      &kp W          &kp SQT        &kp SLASH      &kp DOT       &kp PG_UP
                 &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &key_repeat &sk LCTL  &lt l_num E             &kp UP         &kp DOWN       &kp LBKT       &kp RBKT      &magic MAGIC 0
+            >;
+        };
+
+        l_qwerty {
+            bindings = <
+                &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9        &kp F10
+                &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6     &kp N7         &kp N8         &kp N9         &kp N0        &kp MINUS
+                &kp Q          &kp V          &kp L          &kp H          &kp G          &kp Q                                                                           &kp J      &kp F          &kp O          &kp U          &kp COMMA     &kp BSLH
+                &kp Z          &kp S          &kp R          &kp N          &kp T          &kp B                                                                           &kp Y      &kp C          &kp E          &kp I          &kp A         &kp SEMI
+                &kp GRAVE      &kp Z          &kp X          &kp  M         &kp D          &kp K   HYPER_TAB   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp P      &kp W          &kp SQT        &kp SLASH      &kp DOT       &kp PG_UP
+                &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &key_repeat &lr l_num 0 &sk LSFT               &kp UP         &kp DOWN       &kp LBKT       &kp RBKT      &magic MAGIC 0
             >;
         };
 
@@ -106,8 +115,8 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
             bindings = <
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans          &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
-                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     &kp UP        &kp DEL      &kp SLCK        &none
-                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI       &kp PG_UP                                                                             &kp PRCNT    &kp LEFT     &kp DOWN     &kp RIGHT     &kp RIGHT       &none
+                &trans            WIN_SWAP            APP_SWAP        &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     &kp UP        &kp DEL      &kp SLCK        &none
+                &trans            &sk LSHIFT          &sk LCTRL       &sk LALT        &sk LGUI        &sk HYPER                                                                             &kp PRCNT    &kp LEFT     &kp DOWN     &kp RIGHT     &kp RIGHT       &none
                 &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
@@ -122,13 +131,13 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
                 &trans      &trans      &trans        &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans     &trans  &trans
             >;
         };
-        l_sym {
+        l_fun {
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                             &trans       &trans       &trans        &trans          &trans
                 &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &kp LA(N5)          &kp UNDER       &kp LBKT        &kp RBKT        &kp CARET                                                                             &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &kp BACKSLASH       &kp SLASH       &kp LBRC        &kp RBRC        &kp ASTRK                                                                             &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &kp HASH            &kp AMPERSAND   &kp PIPE        &kp TILDE       &kp GRAVE      &trans      &trans      &trans      &trans      &trans      &trans     &trans       &trans       &trans       &trans        &trans          &trans
+                &trans            &kp F10             &kp F7          &kp F8          &kp F9          &kp CARET                                                                             &trans       &trans       &trans       &trans        &trans          &trans
+                &trans            &kp F11             &kp F3          &kp F4          &kp F5          &kp ASTRK                                                                             &trans       SK(LGUI)     SK(LALT)     SK(LCTRL)     SK(LSHIFT)      &trans
+                &trans            &kp F12             &kp F1          &kp F2          &kp F4          &kp GRAVE      &trans      &trans      &trans      &trans      &trans      &trans     &trans       &to 0        &to l_alt    &trans        &trans          &trans
                 &trans            &trans              &trans          &trans          &trans                         &trans      &trans      &trans      &trans      &trans      &trans                  &trans       &trans       &trans        &trans          &trans
             >;
         };
