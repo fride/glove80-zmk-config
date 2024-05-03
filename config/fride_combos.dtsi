@@ -44,8 +44,8 @@ combos {
     COMBO_ANY(LCTL,     &skq LCTL,    LM3 LM2)
     COMBO_ANY(RCTL,     &skq LCTL,    RM2 RM3)
 
-    COMBO_ANY(esc,      &lt l_sym ESC,    LM2 LM1)
-    COMBO_ANY(colon,    &lt l_sym COLON,  RM1 RM2)
+    COMBO_ANY(esc,      &kp ESC,    LM2 LM1)
+    COMBO_ANY(colon,    &kp COLON,  RM1 RM2)
 
     // COMBO_ANY(at,       &kp AT,       LT3 LM3)
     // COMBO_ANY(hash,     &kp HASH,     LT2 LM2)
