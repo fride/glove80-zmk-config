@@ -93,4 +93,25 @@ behaviors {
             flavor = "tap-preferred";
             bindings = <&kp>, <&sk>;
         };
+     CmmaSemi: CmmaSemi {
+        compatible = "zmk,behavior-mod-morph";
+        label = "comma_semi";
+        #binding-cells = <0>;
+        bindings = <&kp CMMA>, <&kp SEMI>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    DotColn: DotColn {
+        compatible = "zmk,behavior-mod-morph";
+        label = "DotColn";
+        #binding-cells = <0>;
+        bindings = <&kp DOT>, <&kp COLON>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    QuesExcl: QuesExcl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "quest_excl";
+            #binding-cells = <0>;
+            bindings = <&kp QUESTION>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
 };

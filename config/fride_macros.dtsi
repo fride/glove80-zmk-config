@@ -73,15 +73,25 @@
             ;
     };
 
+    ZMK_MACRO(AppSwapp,
+            label = "AppSwapp";
+            bindings
+            = <&macro_press &kp LGUI>
+            , <&macro_tap &kp TAB>
+            , <&tog l_nav>
+            , <&macro_pause_for_release>
+            , <&tog l_nav>
+            , <&macro_release &kp LGUI>
+            ;
+    )
+
     ZMK_MACRO(AppSwap,
             label = "AppSwap";                        
             bindings 
-            = <&macro_press &mo l_nav>
-            , <&macro_press &kp LGUI>
+            = <&macro_press &kp LGUI>
             , <&macro_tap &kp TAB>
             , <&macro_pause_for_release>        
             , <&macro_release &kp LGUI>
-            , <&macro_release &mo l_nav>
             ;
     )            
 
