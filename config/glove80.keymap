@@ -97,8 +97,8 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
                         &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6     &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS
                         &kp Q          &kp V          &kp L          &kp H          &hml HYPER G   &kp P                                                                           &kp X      &hmr HYPER F   &kp O          &kp U          &kp COMMA      &kp BSLH
                         &kp Q          &hml LGUI S    &hml LALT R    &hml LCTL N    &hml LSFT T    &kp B                                                                           &kp Y      &hmr RSFT C    &hmr RCTL E    &hmr LALT I    &hmr RGUI SEMI &kp SEMI
-                        &kp GRAVE      &kp Z          &kp J          &kp  M         &hml MEH D     &kp K   &AppSwapp   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp SLASH &hmr MEH W      &kp SQT        &kp SLASH      &kp DOT        &kp PG_UP
-                        &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 &lt l_num A            &kp LPAR        &kp RPAR       &kp LBKT       &kp RBKT       &magic MAGIC 0
+                        &kp GRAVE      &kp Z          &kp J          &kp  M         &hml MEH D     &kp K   &AppSwapp   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp SLASH  &hmr MEH W     &kp SQT        &kp SLASH      &kp DOT        &kp PG_UP
+                        &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 &lt l_num A             &kp LPAR       &kp RPAR       &kp LBKT       &kp RBKT       &magic MAGIC 0
                     >;
         };
 
@@ -125,12 +125,12 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
         };
         l_num {
             bindings = <
-                &trans      &trans      &trans        &trans         &trans                                                                    &trans     &trans     &trans     &trans  &trans
-                &trans      &trans      &trans        &trans         &trans  &trans                                                  &trans    &trans     &trans     &trans     &trans  &trans
-                &trans   &kp CARET   &kp EQUAL    &kp MINUS      &kp UNDER  &kp STAR                                              &kp BSLH  &kp HASH   &kp AMPS   &kp PIPE  &kp TILDE  &trans
-                &trans      &kp N7      &kp N5        &kp N3         &kp N1  &kp PLUS                                                &kp N0    &kp N0     &kp N2     &kp N4     &kp N6  &trans
-                &trans      &trans   &kp COLON      &kp SEMI         &kp N9  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp N8  &kp COMMA    &kp DOT     &trans  &trans
-                &trans      &trans      &trans        &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans     &trans  &trans
+                &trans        &trans         &trans        &trans         &trans                                                                         &trans        &trans        &trans        &trans  &trans
+                &trans        &trans         &trans        &trans         &trans  &trans                                                  &trans         &trans        &trans        &trans        &trans  &trans
+                &trans     &kp CARET      &kp EQUAL     &kp MINUS      &kp UNDER  &kp STAR                                              &kp BSLH       &kp HASH      &kp AMPS      &kp PIPE     &kp TILDE  &trans
+                &trans  &hml LGUI N7   &hml LALT N5  &hml LCTL N3   &hml LSFT N1  &kp PLUS                                                &kp N0   &hmr RSFT N0  &hmr RCTL N2  &hmr LALT N4  &hmr RSFT N6  &trans
+                &trans        &trans      &kp COLON      &kp SEMI         &kp N9  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans         &kp N8     &kp COMMA       &kp DOT        &trans  &trans
+                &trans        &trans         &trans        &trans         &trans          &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans  &trans     &trans  &trans
             >;
         };
         l_fun {
