@@ -63,7 +63,7 @@ behaviors {
         #binding-cells = <0>;
         continue-list = <UNDERSCORE>, <MINUS>;
     };
-      lst: layer_sticky_tap {
+    lst: layer_sticky_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_STICKY_TAP";
             #binding-cells = <2>;
@@ -71,9 +71,9 @@ behaviors {
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&sk>;
-        };
+    };
 
-        lr: layer_repeat {
+    lr: layer_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_REPEAT";
             #binding-cells = <2>;
@@ -81,18 +81,18 @@ behaviors {
             quick-tap-ms = <175>;
             flavor = "balanced";
             bindings = <&mo>, <&key_repeat>;
-        };
+    };
 
         // Sticky key on tap, normal key on hold
         // Useful for modifier-clicking without the modifier remaining active
-        nk: not_so_sticky_key {
-            compatible = "zmk,behavior-hold-tap";
-            label = "NOT_SO_STICKY_KEY";
-            #binding-cells = <2>;
-            tapping_term_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
+     nk: not_so_sticky_key {
+        compatible = "zmk,behavior-hold-tap";
+        label = "NOT_SO_STICKY_KEY";
+        #binding-cells = <2>;
+        tapping_term_ms = <200>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&sk>;
+     };
      CmmaSemi: CmmaSemi {
         compatible = "zmk,behavior-mod-morph";
         label = "comma_semi";
