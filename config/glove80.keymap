@@ -86,18 +86,29 @@ Bird(a)
     keymap {
         compatible = "zmk,keymap";
          default_layer {
+            // aptv5.
             bindings = <
-                &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9         &kp F10
-                &kp EQUAL      &kp N1         &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6     &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS
-                &kp Q          &kp F          &kp R                &kp D    &hml HYPER P   &kp V                                                                           &kp Q      &hmr HYPER M         &kp U          &kp O          &kp Y    &kp BSLH
-                &kp Q          &hml LGUI S    &hml LALT N    &hml LCTL T     &hml LSFT C   &kp B                                                                           &kp DOT     &hmr RSFT H   &hmr RCTL E    &hmr LALT A    &hmr RGUI I    &kp SEMI
-                &kp GRAVE      &kp Z                &kp X         &kp  K      &hml MEH G   &kp W   &AppSwapp   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp J        &hmr MEH L      &kp SEMI        &kp SQT        &kp DOT    &kp PG_UP
-                &magic MAGIC 0 &kp HOME       &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 &sk LSFT                &kp LPAR       &kp RPAR       &kp LBKT          &kp RBKT    &magic MAGIC 0
+                 &kp F1                 &kp F2   &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9         &kp F10
+                    &kp EQUAL           &kp N1   &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6          &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS
+                    &kp Q                &kp Q   &kp W          &kp F          &hml HYPER P   &kp B                                                                           &kp J     &hmr HYPER L   &kp U          &kp Y          &QuesExcl      &kp BSLH
+                    &kp Q          &hml LGUI A   &hml LALT R    &hml LCTL S    &hml LSFT T    &kp G                                                                           &kp M     &hmr RSFT N    &hmr RCTL E    &hmr LALT I    &hmr RGUI O    &kp SEMI
+                    &kp GRAVE            &kp Z   &kp X          &kp  C         &hml MEH D     &kp V   &AppSwapp   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp K     &hmr MEH H     &CmmaSemi      &DotColn       &kp SQT        &kp PG_UP
+                    &magic MAGIC 0    &kp HOME   &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 &skq LSFT              &kp LPAR       &kp RPAR       &kp LBKT       &kp RBKT       &magic MAGIC 0
             >;
         };
 
 /*
 
+
+    // colemak-dhv
+  bindings = <
+                 &kp F1                 &kp F2   &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9         &kp F10
+                    &kp EQUAL           &kp N1   &kp N2         &kp N3         &kp N4         &kp N5                                                                          &kp N6          &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS
+                    &kp Q                &kp Q   &kp W          &kp F          &hml HYPER P   &kp B                                                                           &kp J     &hmr HYPER L   &kp U          &kp Y          &QuesExcl      &kp BSLH
+                    &kp Q          &hml LGUI A   &hml LALT R    &hml LCTL S    &hml LSFT T    &kp G                                                                           &kp M     &hmr RSFT N    &hmr RCTL E    &hmr LALT I    &hmr RGUI O    &kp SEMI
+                    &kp GRAVE            &kp Z   &kp X          &kp  C         &hml MEH D     &kp V   &AppSwapp   &sk LALT    &sk LCTL   &kp LGUI    &kp RCTRL   &kp SQT      &kp K     &hmr MEH H     &CmmaSemi      &DotColn       &kp SQT        &kp PG_UP
+                    &magic MAGIC 0    &kp HOME   &kp END        &kp LEFT       &kp RIGHT              NAV_SPACE   &lr l_fun 0 &kp DEL    &sl l_num   &lr l_num 0 &skq LSFT              &kp LPAR       &kp RPAR       &kp LBKT       &kp RBKT       &magic MAGIC 0
+            >;
 
  bindings = <
                 &kp F1         &kp F2         &kp F3         &kp F4         &kp F5                                                                                                    &kp F6         &kp F7         &kp F8         &kp F9         &kp F10
