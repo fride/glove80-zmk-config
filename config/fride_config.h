@@ -9,22 +9,24 @@
 // layers
 #define DEFAULT    0
 #define l_nav      1
-#define MAGIC      2
-#define MAGIC_O    3
-#define MAGIC_Y    4
-#define MAGIC_U    5
-#define MAGIC_ON   6
-#define MAGIC_UST  7
-#define MAGIC_S    8
-#define MAGIC_K    9
-#define MAGIC_T   10
-#define MAGIC_ION 11
-#define MAGIC_A   12
-#define MAGIC_L   13
-#define MAGIC_M   14
-#define MAGIC_E   15
-#define MAGIC_P   16
-#define MAGIC_F   17
+#define l_sym      2
+#define l_num      3
+#define MAGIC      4
+#define MAGIC_O    5
+#define MAGIC_Y    6
+#define MAGIC_U    7
+#define MAGIC_ON   8
+#define MAGIC_UST  9
+#define MAGIC_S   10
+#define MAGIC_K   11
+#define MAGIC_T   12
+#define MAGIC_ION 13
+#define MAGIC_A   14
+#define MAGIC_L   15
+#define MAGIC_M   16
+#define MAGIC_E   17
+#define MAGIC_P   18
+#define MAGIC_F   19
 
 
 //
