@@ -23,6 +23,8 @@
 #define HOME_A &hml RCTRL A
 #define HOME_I &lt l_sym I
 
+// I will never like this dsl! Why do I have to pass arguments where no arguments are used!?
+#define Arrows arrows 0 0
 / {
 
     #include "fride_macros.dtsi"
@@ -33,12 +35,12 @@
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp TAB        &kp V    &kp M       &kp L       &kp C       &kp P                                                                      &kp B      &kp F   &kp U       &kp O       &kp Q       &kp BSLH
-                &kp BSPC       HOME_S   HOME_T      HOME_R      HOME_D      &kp Y                                                                      &kp DOT    HOME_N  HOME_E      HOME_A      HOME_I      &kp SQT
-                &kp GRAVE      &kp X    &kp K       &kp J       &kp G       &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp SQT     &kp SEMI    &kp COMMA   &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                             &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp TAB        &kp V    &kp M       &kp L       &kp C         &kp P                                                                      &kp B      &kp F   &kp U       &kp O       &kp Q       &kp BSLH
+                &kp BSPC       HOME_S   HOME_T      HOME_R      HOME_D        &kp Y                                                                      &kp DOT    HOME_N  HOME_E      HOME_A      HOME_I      &kp SQT
+                &kp GRAVE      &kp X    &kp K       &kp J       &lt l_num  G  &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp SQT     &kp SEMI    &kp COMMA   &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
 
@@ -57,7 +59,7 @@
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &kp LT          &kp GT          &kp BSLH        &kp GRAVE                                                                             &kp AMPS     &Arrow       &kp LBKT     &kp RBKT      &trans          &trans
+                &trans            &trans              &kp LT          &kp GT          &kp BSLH        &kp GRAVE                                                                             &kp AMPS     &Arrows     &kp LBKT     &kp RBKT      &trans          &trans
                 &trans            &kp EXCL            &kp MINUS       &kp PLUS        &kp EQUAL       &kp HASH                                                                              &kp PIPE     &kp COLON    &kp LPAR     &kp RPAR      &kp PERCENT     &trans
                 &trans            &trans              &kp SLASH       &kp STAR        &kp CARET       &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp TILDE    &kp DLLR     &kp LBRC     &kp RBRC      &trans          &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
@@ -68,10 +70,10 @@
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &kp P          &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans      &trans      &trans    &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &kp TAB      &kp N7       &kp N8       &kp N9        &kp PLUS        &trans
+                &trans            &sk LSFT            &sk LCTRL       &sk LALT        &sk LGUI        &trans                                                                                &kp COLON    &kp N1       &kp N2       &kp N3        &kp MINUS       &kp STAR
+                &trans            &trans              &trans          &sk LGUI        &trans          &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp COMMA    &kp N4       &kp N5       &kp N6        &kp DOT         &trans
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &kp N0                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
         magic_layer {

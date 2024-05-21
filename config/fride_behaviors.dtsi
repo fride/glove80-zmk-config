@@ -117,4 +117,16 @@ behaviors {
         hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>; // right hand allowed
         hold-trigger-on-release;             // delay positional check until key-release
     };
+
+
+    arrows: arrows {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ARROWS";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <120>;
+        quick-tap-ms = <120>;
+        global-quick-tap;
+        bindings = <&FatArrow>, <&Arrow>;
+    };
 };

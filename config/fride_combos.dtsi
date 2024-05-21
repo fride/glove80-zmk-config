@@ -38,7 +38,11 @@
 combos {
     compatible = "zmk,combos";
 
-    COMBO_ANY(TAB,      &kp TAB,       36 37 38)
-    COMBO_ANY(ENTER,    &kp ENTER,     41 42 43)
-    // COMBO_MAGIC(MG_Y,   &kp Y,         38)
+    COMBO_ANY(TAB,          &kp TAB,       36 37 38)
+    COMBO_ANY(ENTER,        &kp ENTER,     41 42 43)
+    COMBO_ANY(lparan,       &kp LPAR,      41 42)
+    COMBO_ANY(rparan,       &kp RPAR,      42 43)
+    COMBO_ANY(lbracket,     &kp LBKT,      59 60)
+    COMBO_ANY(rbracket,     &kp RBKT,      60 61)
+
 };
