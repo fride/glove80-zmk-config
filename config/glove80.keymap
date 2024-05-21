@@ -57,9 +57,9 @@
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &kp LT          &kp GT          &kp BSLH        &kp GRAVE                                                                             &kp AMPS     &Arrow       &trans       &trans        &trans          &trans
-                &trans            &kp EXCL            &kp MINUS       &kp PLUS        &kp EQUAL       &kp HASH                                                                              &kp PIPE     &kp COLON    &trans       &trans        &trans          &trans
-                &trans            &trans              &kp SLASH       &kp STAR        &kp CARET       &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp TILDE    &kp DLLR     &trans       &trans        &trans          &trans
+                &trans            &trans              &kp LT          &kp GT          &kp BSLH        &kp GRAVE                                                                             &kp AMPS     &Arrow       &kp LBKT     &kp RBKT      &trans          &trans
+                &trans            &kp EXCL            &kp MINUS       &kp PLUS        &kp EQUAL       &kp HASH                                                                              &kp PIPE     &kp COLON    &kp LPAR     &kp RPAR      &kp PERCENT     &trans
+                &trans            &trans              &kp SLASH       &kp STAR        &kp CARET       &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp TILDE    &kp DLLR     &kp LBRC     &kp RBRC      &trans          &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
