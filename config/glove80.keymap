@@ -13,6 +13,10 @@
 
 #include "fride_config.h"
 
+// tap: left/right parenthesis | shft + tap: less-than/greater-than
+// SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
+// SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
+
 #define HOME_D &hmr LGUI  D
 #define HOME_R &hmr LALT  R
 #define HOME_T &hmr LCTRL T
