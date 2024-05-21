@@ -12,6 +12,13 @@
     timeout-ms = <45>; \
 };
 
+#define COMBO_MAGIC(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <29>, <KEYPOS>; \
+    timeout-ms = <120>; \
+};
+
     // |------------------------|------------------------|
     // | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
     // |                        |                        |
@@ -26,9 +33,12 @@
     // |                  71 54 | 55 72                  |
     // |------------------------|------------------------|
     //
+
+#define MGK  29
 combos {
     compatible = "zmk,combos";
 
-    COMBO_ANY(TAB,   &kp TAB, 36 37 38)
-    COMBO_ANY(ENTER, &kp ENTER, 41 42 43)
+    COMBO_ANY(TAB,      &kp TAB,       36 37 38)
+    COMBO_ANY(ENTER,    &kp ENTER,     41 42 43)
+    // COMBO_MAGIC(MG_Y,   &kp Y,         38)
 };
