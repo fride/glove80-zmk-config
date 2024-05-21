@@ -17,14 +17,14 @@
 // SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 // SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
-#define HOME_D &hmr LGUI  D
-#define HOME_R &hmr LALT  R
-#define HOME_T &hmr LCTRL T
+#define HOME_D &hml LGUI  D
+#define HOME_R &hml LALT  R
+#define HOME_T &hml LCTRL T
 #define HOME_S &lt l_sym S
 
-#define HOME_N &hml RGUI  N
-#define HOME_E &hml RALT  E
-#define HOME_A &hml RCTRL A
+#define HOME_N &hmr RGUI  N
+#define HOME_E &hmr RALT  E
+#define HOME_A &hmr RCTRL A
 #define HOME_I &lt l_sym I
 
 // I will never like this dsl! Why do I have to pass arguments where no arguments are used!?
@@ -44,7 +44,7 @@
                 &kp TAB        &kp V    &kp M       &kp L       &kp C         &kp P                                                                      &kp B      &kp F   &kp U       &kp O       &kp Q       &kp BSLH
                 &kp BSPC       HOME_S   HOME_T      HOME_R      HOME_D        &kp Y                                                                      &kp DOT    HOME_N  HOME_E      HOME_A      HOME_I      &kp SQT
                 &kp GRAVE      &kp X    &kp K       &kp J       &lt l_num  G  &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp SQT     &kp SEMI    &kp COMMA   &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
 
