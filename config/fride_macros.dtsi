@@ -112,6 +112,12 @@
             ;
     };
 
+    ZMK_MACRO(Arrow,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&kp MINUS>
+                 , <&kp GT>;
+    )
     //// magic
      ZMK_MACRO(ak_a,
         wait-ms = <10>;

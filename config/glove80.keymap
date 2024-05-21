@@ -13,14 +13,15 @@
 
 #include "fride_config.h"
 
-#define HOME_D &hrm_d LGUI  D
-#define HOME_R &hrm_r LALT  R
-#define HOME_T &hrm_t LCTRL T
-#define HOME_S &hrm_s l_sym S
+#define HOME_D &hmr LGUI  D
+#define HOME_R &hmr LALT  R
+#define HOME_T &hmr LCTRL T
+#define HOME_S &lt l_sym S
 
-#define HOME_N &hrm_n RGUI  N
-#define HOME_E &hrm_e RALT  E
-#define HOME_A &hrm_a RCTRL A
+#define HOME_N &hml RGUI  N
+#define HOME_E &hml RALT  E
+#define HOME_A &hml RCTRL A
+#define HOME_I &lt l_sym I
 
 / {
 
@@ -34,10 +35,9 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp TAB          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp N   &ak_u       &ak_o       &kp Q       &kp BSLH
-                &kp Z          &ak_s    &ak_t       &ak_r       &ak_d       &ak_y                                                                      &kp F      &ak_n   &ak_e       &ak_a       &ak_i       &kp SQT
-//                &kp BSPC          HOME_S    HOME_T      HOME_R      HOME_D     &ak_y                                                                       &kp F      HOME_N  HOME_E      HOME_A      &ak_i       &kp SQT
-                &kp GRAVE      &kp X    &ak_k       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
+                &kp TAB        &kp V    &kp M       &kp L       &kp C       &kp P                                                                      &kp B      &kp F   &kp U       &kp O       &kp Q       &kp BSLH
+                &kp BSPC       HOME_S   HOME_T      HOME_R      HOME_D      &kp Y                                                                      &kp DOT    HOME_N  HOME_E      HOME_A      HOME_I      &kp SQT
+                &kp GRAVE      &kp X    &kp K       &kp J       &kp G       &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp SQT     &kp SEMI    &kp COMMA   &kp PG_UP
                 &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
@@ -46,9 +46,9 @@
             bindings = <
                 &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &trans          &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
-                &trans            &trans              &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     &kp UP        &kp DEL      &kp SLCK        &none
+                &trans            &AppSwap            &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp BSPC     &kp UP        &kp DEL      &kp SLCK        &none
                 &trans            &sk LSFT            &sk LCTRL       &sk LALT        &sk LGUI        &sk HYPER                                                                             &kp PRCNT    &kp LEFT     &kp DOWN     &kp RIGHT     &kp RIGHT       &none
-                &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &AppSwap      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
+                &trans            &kp K_CMENU         &none           &kp F11         &AppSwap        &kp PG_DN       &AppSwap      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
@@ -57,9 +57,9 @@
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &kp P          &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans          &trans      &trans      &trans      &trans      &trans      &trans    &trans       &trans       &trans       &trans        &trans          &trans
+                &trans            &trans              &kp LT          &kp GT          &kp BSLH        &kp GRAVE                                                                             &kp AMPS     &Arrow       &trans       &trans        &trans          &trans
+                &trans            &kp EXCL            &kp MINUS       &kp PLUS        &kp EQUAL       &kp HASH                                                                              &kp PIPE     &kp COLON    &trans       &trans        &trans          &trans
+                &trans            &trans              &kp SLASH       &kp STAR        &kp CARET       &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp TILDE    &kp DLLR     &trans       &trans        &trans          &trans
                 &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
