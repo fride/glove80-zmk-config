@@ -38,11 +38,34 @@
 combos {
     compatible = "zmk,combos";
 
-    COMBO_ANY(TAB,          &kp TAB,       36 37 38)
-    COMBO_ANY(ENTER,        &kp ENTER,     41 42 43)
-    COMBO_ANY(lparan,       &kp LPAR,      41 42)
-    COMBO_ANY(rparan,       &kp RPAR,      42 43)
-    COMBO_ANY(lbracket,     &kp LBKT,      59 60)
-    COMBO_ANY(rbracket,     &kp RBKT,      60 61)
+       COMBO_ANY(TAB,          &kp TAB,       36 37 38)
+       COMBO_ANY(ENTER,        &kp ENTER,     41 42 43)
+       COMBO_ANY(at,        &kp AT,       LT3 LM3)
+       COMBO_ANY(hash,     &kp HASH,     LT2 LM2)
+       COMBO_ANY(dollar,   &kp DOLLAR,   LT1 LM1)
+       COMBO_ANY(percent,  &kp PERCENT,  LT0 LM0)
+
+       COMBO_ANY(carret,   &kp CARET,    RT0 RM0)
+       COMBO_ANY(plus  ,   &kp PLUS  ,   RT1 RM1)
+       COMBO_ANY(star  ,   &kp STAR  ,   RT2 RM2)
+       COMBO_ANY(amps  ,   &kp AMPS  ,   RT3 RM3)
+
+       COMBO_ANY(grave,       &kp GRAVE,        LM3 LB3)
+       COMBO_ANY(BACKSLASH,   &kp BACKSLASH ,   LM2 LB2)
+       COMBO_ANY(equal ,      &kp EQUAL  ,      LM1 LB1)
+       COMBO_ANY(tilde  ,      &kp TILDE  ,     LM0 LB0)
+
+       COMBO_ANY(under,    &kp UNDER,    RM0 RB0)
+       COMBO_ANY(minus  ,  &kp MINUS ,   RM1 RB1)
+       COMBO_ANY(slash ,   &kp SLASH ,   RM2 RB2)
+       COMBO_ANY(pipe  ,   &kp PIPE  ,   RM3 RB3)
+
+       COMBO_ANY(LPAR,     &lpar_lt,     RT1 RT2)
+       COMBO_ANY(RPAR,     &rpar_gt,     RT2 RT3)
+
+       COMBO_ANY(LBKT,     &kp LBKT,     RM1 RM2)
+       COMBO_ANY(RBKT,     &kp RBKT,     RM2 RM3)
+       COMBO_ANY(LBRC,     &kp LBRC,     RB1 RB2)
+       COMBO_ANY(RBRC,     &kp RBRC,     RB2 RB3)
 
 };
