@@ -90,22 +90,5 @@
                 &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &none
             >;
         };
-
-
-        MAGIC_LAYER(MAGIC_O,    &kp O)
-        MAGIC_LAYER(MAGIC_Y,    &kp Y)
-        MAGIC_LAYER(MAGIC_U   , &kp U)
-        MAGIC_LAYER(MAGIC_ON  , &mg_on)
-        MAGIC_LAYER(MAGIC_UST , &mg_ust)
-        MAGIC_LAYER(MAGIC_S   , &kp S)
-        MAGIC_LAYER(MAGIC_K   , &kp K)
-        MAGIC_LAYER(MAGIC_T   , &kp T)
-        MAGIC_LAYER(MAGIC_ION , &mg_ion)
-        MAGIC_LAYER(MAGIC_A   , &kp A)
-        MAGIC_LAYER(MAGIC_L   , &kp L)
-        MAGIC_LAYER(MAGIC_M   , &kp M)
-        MAGIC_LAYER(MAGIC_E   , &kp E)
-        MAGIC_LAYER(MAGIC_P   , &kp P)
-        MAGIC_LAYER(MAGIC_F   , &kp F)
     };
 };
