@@ -34,9 +34,8 @@
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                            &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp TAB          &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp N   &ak_u       &ak_o       &kp Q       &kp BSLH
+                &kp TAB        &kp V    &ak_m       &ak_l       &ak_c       &ak_p                                                                      &kp B      &kp N   &ak_u       &ak_o       &kp Q       &kp BSLH
                 &kp Z          &ak_s    &ak_t       &ak_r       &ak_d       &ak_y                                                                      &kp F      &ak_n   &ak_e       &ak_a       &ak_i       &kp SQT
-//                &kp BSPC          HOME_S    HOME_T      HOME_R      HOME_D     &ak_y                                                                       &kp F      HOME_N  HOME_E      HOME_A      &ak_i       &kp SQT
                 &kp GRAVE      &kp X    &ak_k       &ak_j       &ak_g       &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp COMMA   &kp DOT     &kp SEMI    &kp PG_UP
                 &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           NAV_SPCAE   &kp BSPC    &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
