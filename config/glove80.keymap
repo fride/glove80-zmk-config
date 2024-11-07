@@ -42,7 +42,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 #define HOME_I &hmr LALT I     
 #define HOME_F  &hmr RGUI F
 
-#define SHIFT_THU &skq LSFT
+#define OS_LSFT &skq LSFT
 
 #define NUM_E &lt l_num E
 // I will never like this dsl! Why do I have to pass arguments where no arguments are used!?
@@ -62,7 +62,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
                 &kp TAB        &kp V    &kp L       &kp H       &kp G         &kp K                                                                      &kp J      PUQ     &kp O       &kp U       &kp Q       &kp BSLH
                 &kp BSPC       HOME_S   HOME_R      HOME_N      HOME_T        &kp B                                                                      &kp Y      HOME_C  HOME_A      HOME_I      HOME_F      &kp SQT
                 &kp GRAVE      &kp Z    &kp X       &kp M       &lt l_num  D  &kp P   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp SQT    &kp W   &kp DOT     &kp SEMI    &kp COMMA   &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &skq LCTRL  &skq LALT  &kp RALT  &skq LGUI NUM_E                  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   OS_LSFT     &skq LALT  &kp RALT  OS_LSFT   NUM_E                  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
         
@@ -103,10 +103,10 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
                 &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &trans              &trans          &trans          &trans          &trans                                                                                &kp TAB      &kp N7       &kp N8       &kp N9        &kp PLUS        &trans
-                &trans            &sk LSFT            &sk LCTRL       &sk LALT        &sk LGUI        &trans                                                                                &kp COLON    &kp N1       &kp N2       &kp N3        &kp MINUS       &kp STAR
-                &trans            &trans              &trans          &sk LGUI        &trans          &trans          &trans      &trans      &trans      &trans      &trans      &trans    &kp COMMA    &kp N4       &kp N5       &kp N6        &kp DOT         &trans
-                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &kp N0                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+                &trans            &kp N7              &kp N8          &kp N9          &trans          &trans                                                                                &kp TAB      &kp N7       &kp N8       &kp N9        &kp PLUS        &trans
+                &trans            &kp N4              &kp N5          &kp N6          &sk LGUI        &trans                                                                                &kp COLON    &sk LSFT     &sk LCTRL    &sk LALT        &sk LGUI       &kp STAR
+                &trans            &kp N1              &kp N2          &kp N3          &trans          &trans          &kp PLUS    &trans      &trans      &trans      &trans      &trans    &kp COMMA    &kp N4       &kp N5       &kp N6        &kp DOT         &trans
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &kp N0      &kp PLUS      &kp LT      &trans      &trans      &kp N0                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
         magic_layer {
