@@ -30,16 +30,21 @@
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
-#define HOME_D &hml LGUI  D
+#define PUQ &sl l_alpha2
+
+#define HOME_S &hml LGUI  S
 #define HOME_R &hml LALT  R
-#define HOME_T &hml LCTRL T
-#define HOME_S &lt l_sym S
+#define HOME_N &hml LCTRL N     
+#define HOME_T &hml LSFT  T
 
-#define HOME_N &hmr RGUI  N
-#define HOME_E &hmr RALT  E
-#define HOME_A &hmr RCTRL A
-#define HOME_I &lt l_sym I
+#define HOME_C &hmr RSFT C
+#define HOME_A &hmr RCTL A     
+#define HOME_I &hmr LALT I     
+#define HOME_F  &hmr RGUI F
 
+#define SHIFT_THU &skq LSFT
+
+#define NUM_E &lt l_num E
 // I will never like this dsl! Why do I have to pass arguments where no arguments are used!?
 #define Arrows arrows 0 0
 / {
@@ -52,12 +57,23 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
         compatible = "zmk,keymap";
         default_layer {
                bindings = <
-                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                             &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
                 &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-                &kp TAB        &kp V    &kp M       &kp L       &kp C         &kp P                                                                      &kp B      &kp F   &kp U       &kp O       &kp Q       &kp BSLH
-                &kp BSPC       HOME_S   HOME_T      HOME_R      HOME_D        &kp Y                                                                      &kp DOT    HOME_N  HOME_E      HOME_A      HOME_I      &kp SQT
-                &kp GRAVE      &kp X    &kp K       &kp J       &lt l_num  G  &kp W   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp Z      &kp H   &kp SQT     &kp SEMI    &kp COMMA   &kp PG_UP
-                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   &sk LSHIFT             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+                &kp TAB        &kp V    &kp L       &kp H       &kp G         &kp K                                                                      &kp J      PUQ     &kp O       &kp U       &kp Q       &kp BSLH
+                &kp BSPC       HOME_S   HOME_R      HOME_N      HOME_T        &kp B                                                                      &kp Y      HOME_C  HOME_A      HOME_I      HOME_F      &kp SQT
+                &kp GRAVE      &kp Z    &kp X       &kp M       &lt l_num  D  &kp P   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp SQT    &kp W   &kp DOT     &kp SEMI    &kp COMMA   &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &skq LCTRL  &skq LALT  &kp RALT  &skq LGUI NUM_E                  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+            >;
+        };
+        
+        l_alpha2 {
+               bindings = <
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp TAB        &kp V    &kp L       &kp H       &Gt           &Kt                                                                        &kp J      PUQ     &kp RA(O)   &kp RA(U)   &kp Q       &kp BSLH
+                &kp BSPC       HOME_S   HOME_R      HOME_N      HOME_T        &kp B                                                                      &kp Y      HOME_C  &kp RA(A)   HOME_I      HOME_F      &kp SQT
+                &kp GRAVE      &kp Z    &kp X       &kp M       &Dt           &kp P   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp SQT    &kp W   &kp DOT     &kp SEMI    &kp COMMA   &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   NUM_E                  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
             >;
         };
 
@@ -105,3 +121,58 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
         };
     };
 };
+
+/*
+
+
+#define HOME_S &hml LGUI  S
+#define HOME_N &hml LALT  N
+#define HOME_R &hml LCTRL R
+#define HOME_T &hml LSFT  T
+
+#define HOME_A &hmr RSFT A
+#define HOME_E &hmr RCTL E
+#define HOME_I &hmr LALT I
+#define HOME_H &hmr RGUI H
+
+#define SHIFT_THU &skq LSFT
+
+default_layer {
+        bindings = <
+        &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+        &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+        &kp TAB        &kp F    &kp M       &kp L       &kp C         &kp G                                                                      &kp Q      &kp COMMA   PUQ         &kp U       &kp P       &kp BSLH
+        &kp BSPC       HOME_S   HOME_N      HOME_R      HOME_T        &kp D                                                                      &kp O      HOME_A      HOME_E      HOME_I      HOME_H      &kp SQT
+        &kp GRAVE      &kp Z    &kp B       &kp W       &lt l_num  V  &kp J   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp X      &kp SQT     &kp DOT     &kp Y       &kp K       &kp PG_UP
+        &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   SHIFT_THU              &kp UP      &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+    >;
+};
+
+  
+        // l_alpha2 {
+        //        bindings = <
+        //         &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+        //         &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+        //         &kp TAB        &kp F    &kp M       &kp L       &Ch           &kp G                                                                      &kp RA(S)  &kp COMMA   PUQ         &kp RA(U)   &kp P       &kp BSLH
+        //         &kp BSPC       &Sch    HOME_N      HOME_R       &Th           &kp D                                                                      &kp RA(O)  &kp RA(A)   HOME_E      HOME_I      HOME_H      &kp SQT
+        //         &kp GRAVE      &kp Z    &kp B       &Wh         &lt l_num  V  &kp J   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp X      &kp SQT     &kp DOT     &kp Y       &kp K       &kp PG_UP
+        //         &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   SHIFT_THU              &kp UP      &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+        //     >;
+        // };
+
+
+// focal with e on thumb
+
+    
+
+     default_layer {
+               bindings = <
+                &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp TAB        &kp V    &kp L       &kp H       &kp G         &kp K                                                                      &kp J      &kp F   &kp O       &kp U       &kp Q       &kp BSLH
+                &kp BSPC       HOME_S   HOME_R      HOME_N      HOME_T        &kp B                                                                       &kp Y      HOME_C  HOME_A      HOME_I      HOME_MINUS      &kp SQT
+                &kp GRAVE      &kp Z    &kp X       &kp M       &lt l_num  D  &kp P   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp SQT    &kp W   &kp DOT     &kp SEMI    &kp COMMA   &kp PG_UP
+                &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT             NAV_SPCAE   &kp LCTRL   &kp DEL    &kp RALT  &kp RET   NUM_E                  &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC 0
+            >;
+        };
+*/

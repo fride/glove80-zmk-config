@@ -122,4 +122,69 @@
         bindings = <&kp MINUS>
                  , <&kp GT>;
     )
+    ZMK_MACRO(Wh,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp W>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+    )
+    ZMK_MACRO(Th,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp T>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+    )
+       
+    ZMK_MACRO(Ch,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp C>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp H>
+                ;
+    )
+    ZMK_MACRO(Sch,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp S>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp C>
+                , <&macro_tap &kp H>
+                ;
+    )
+    ZMK_MACRO(Gt,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp G>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp T>
+                ;
+    )
+    ZMK_MACRO(Kt,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp K>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp T>
+                ;
+    )
+    ZMK_MACRO(Dt,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&macro_tap &kp D>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&macro_tap &kp T>
+                ;
+    )
  };
