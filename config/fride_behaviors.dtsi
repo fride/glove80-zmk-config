@@ -50,4 +50,21 @@ behaviors {
         global-quick-tap;
         bindings = <&FatArrow>, <&Arrow>;
     };
+
+     as: auto_shift {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        tapping_term_ms = <200>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
+// TODO make this a macro!
+      one_lbrc: one_lbrc {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&as LBRC N1>, <&kp LBRC>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
 };

@@ -30,6 +30,42 @@
 SIMPLE_MORPH(lpar_lt, SFT, &kp LPAR, &kp LT)
 SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 
+
+#define AUTO_SHIFT_MORPH(name, normal, shifted)\
+/ { \
+    behaviors { \
+      name: name {\
+            compatible = "zmk,behavior-mod-morph";\
+            #binding-cells = <0>;\
+            bindings = <&as shifted normal>, <&kp normal>;\
+            mods = <(MOD_LSFT|MOD_RSFT)>;\
+        };\
+    }; \
+};
+
+AUTO_SHIFT_MORPH(one,   N1, LBRC)
+AUTO_SHIFT_MORPH(two,   N2, RBRC)
+AUTO_SHIFT_MORPH(three, N3, DLLR)
+
+AUTO_SHIFT_MORPH(four,  N4, LPAR)
+AUTO_SHIFT_MORPH(five,  N4, RPAR)
+AUTO_SHIFT_MORPH(six,   N4, EQUAL)
+
+AUTO_SHIFT_MORPH(seven, N7, LBKT)
+AUTO_SHIFT_MORPH(eight, N8, RBKT)
+AUTO_SHIFT_MORPH(nine,  N9, STAR)
+
+AUTO_SHIFT_MORPH(zero,  N0, UNDER)
+AUTO_SHIFT_MORPH(minusplus,  MINUS, PLUS)
+AUTO_SHIFT_MORPH(ltgt,  LT, GT)
+
+AUTO_SHIFT_MORPH(bslh_crt,  BSLH, CARET)
+AUTO_SHIFT_MORPH(colon_excl, COLON, EXCL)
+AUTO_SHIFT_MORPH(fslh_amps, FSLH, AMPS)
+AUTO_SHIFT_MORPH(hash_pipe, HASH, PIPE)
+AUTO_SHIFT_MORPH(at_prcnt, AT, PRCNT)
+AUTO_SHIFT_MORPH(grave_tilde, GRAVE, TILDE)
+
 #define PUQ &sl l_alpha2
 
 #define HOME_S &hml LGUI  S
@@ -58,7 +94,7 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
         default_layer {
                bindings = <
                 &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                              &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-                &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
+                &kp EQUAL      &one     &two      &kp N3      &kp N4        &kp N5                                                                     &kp N6     &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
                 &kp TAB        &kp V    &kp L       &kp H       &kp G         &kp K                                                                      &kp J      PUQ     &kp O       &kp U       &kp Q       &kp BSLH
                 &kp BSPC       HOME_S   HOME_R      HOME_N      HOME_T        &kp B                                                                      &kp Y      HOME_C  HOME_A      HOME_I      HOME_F      &kp SQT
                 &kp GRAVE      &kp Z    &kp X       &kp M       &lt l_num  D  &kp P   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI  &kp RCTRL &kp SQT     &kp SQT    &kp W   &kp DOT     &kp SEMI    &kp COMMA   &kp PG_UP
@@ -102,11 +138,11 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
         l_num {
             bindings = <
                 &trans            &trans              &trans          &trans          &trans                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
-                &trans            &trans              &trans          &trans          &trans          &kp HOME                                                                              &trans       &trans       &trans       &trans        &trans          &trans
-                &trans            &kp N7              &kp N8          &kp N9          &trans          &trans                                                                                &kp TAB      &kp N7       &kp N8       &kp N9        &kp PLUS        &trans
-                &trans            &kp N4              &kp N5          &kp N6          &sk LGUI        &trans                                                                                &kp COLON    &sk LSFT     &sk LCTRL    &sk LALT        &sk LGUI       &kp STAR
-                &trans            &kp N1              &kp N2          &kp N3          &trans          &trans          &kp PLUS    &trans      &trans      &trans      &trans      &trans    &kp COMMA    &kp N4       &kp N5       &kp N6        &kp DOT         &trans
-                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &kp N0      &kp PLUS      &kp LT      &trans      &trans      &kp N0                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+                &trans            &trans              &trans          &trans          &trans        &kp HOME                                                                                &none      &none         &none        &none         &none      &none
+                &trans            &bslh_crt           &seven          &eight          &nine         &fslh_amps                                                                              &none      &none         &none        &none         &none      &none
+                &trans            &colon_excl         &four           &five           &six          &hash_pipe                                                                              &none      &none         &none        &none         &none      &none
+                &trans            &at_prcnt           &one            &two            &three        &grave_tilde      &kp PLUS    &trans      &trans      &trans      &trans      &trans    &none      &none         &none        &none         &none      &none
+                &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &zero      &minusplus   &ltgt      &trans      &trans      &kp N0                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
         magic_layer {
