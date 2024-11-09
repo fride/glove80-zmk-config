@@ -3,7 +3,7 @@
 #define my_ak_delay 40
 
 #define HYPER LC(LS(LG(LALT)))
-
+#define MEH LC(LA(LSFT))
 #define NAV_SPCAE &lt l_nav SPACE
 
 // layers
