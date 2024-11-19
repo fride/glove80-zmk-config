@@ -130,7 +130,16 @@
             &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp SPACE   &kp DEL     &kp LALT   &kp RALT  &kp RET   MAGIC_SHIFT         MAGIC_SHIFT &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
             >;
         };
-
+        alpha_2_layer {
+           bindings = <
+            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                           &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6    &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+            &kp TAB        &kp Z    &kp M       &kp L       &kp C       &kp G                                                                      &kp Q     &kp COMMA   PUQ         &kp RA(U)   &kp RA(S)   &kp BSLH
+            &kp ESC        &kp S    &kp N       &kp R       &kp T       &kp D                                                                      &kp RA(O) &kp RA(A)   &kp E       &kp I       &kp H       &kp SQT
+            &kp GRAVE      &kp F    &kp B       &kp W       &kp V       &kp J   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL MAGIC_SHIFT &kp X     &kp SQT     &kp DOT     &kp Y       &kp K       &kp PG_UP
+            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp SPACE   &kp DEL     &kp LALT   &kp RALT  &kp RET   MAGIC_SHIFT           MAGIC_SHIFT &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+            >;
+        };
         lower_layer {
             bindings = <
             &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
