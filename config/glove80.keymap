@@ -16,9 +16,14 @@
 
 // layers
 #define DEFAULT 0
-#define LOWER 1
-#define MAGIC 2
-#define FACTORY_TEST 3
+#define ALPHA2  1
+#define LOWER   2
+#define MAGIC   3
+#define FACTORY_TEST 4
+
+
+// keys
+#define PUQ &sl ALPHA2
 
 / {
     behaviors {
@@ -116,21 +121,13 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |                                                               |  F6   |  F7   |  F8  |   F9  |  F10 |
-            // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
-            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
-            // |   `   |  Z  |  X  |  C   |  V   |  B   | LSHFT | LCTRL | LOWER | | LGUI  | RCTRL | RSHFT |  N   |   M   |   ,   |  .   |   /   | PGUP |
-            // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
-
             bindings = <
-            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp BSLH
-            &kp ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
-            &kp GRAVE      &kp Z    &kp X       &kp C       &kp V       &kp B   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL MAGIC_SHIFT &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
-            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp DEL     &kp LALT   &kp RALT  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                         &kp F6      &kp F7      &kp F8      &kp F9      &kp F10
+            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+            &kp TAB        &kp Z    &kp M       &kp L       &kp C       &kp G                                                                      &kp Q   &kp COMMA   PUQ         &kp U       &kp P       &kp BSLH
+            &kp ESC        &kp S    &kp N       &kp R       &kp T       &kp D                                                                      &kp O   &kp A       &kp E       &kp I       &kp H       &kp SQT
+            &kp GRAVE      &kp F    &kp B       &kp W       &kp V       &kp J   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL MAGIC_SHIFT &kp X   &kp SQT     &kp DOT     &kp Y       &kp K       &kp PG_UP
+            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp SPACE   &kp DEL     &kp LALT   &kp RALT  &kp RET   MAGIC_SHIFT         MAGIC_SHIFT &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
             >;
         };
 
