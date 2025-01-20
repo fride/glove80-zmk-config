@@ -1,3 +1,6 @@
 [submodule "zmk-antecedent-morph"]
 	path = zmk-antecedent-morph
 	url = https://github.com/ssbb/zmk-antecedent-morph
+[submodule "zmk-auto-layer"]
+	path = zmk-auto-layer
+	url = git@github.com:urob/zmk-auto-layer.git

@@ -9,7 +9,7 @@ RUN <<EOF
     mkdir /config
     # Mirror ZMK repository to make it easier to reference both branches and
     # tags without remote namespacing
-    git clone --mirror https://github.com/moergo-sc/zmk /zmk
+    git clone --mirror https://github.com/hertzquake/moergo-zmk /zmk
     GIT_DIR=/zmk git worktree add --detach /src
 EOF
 
@@ -24,7 +24,8 @@ RUN <<EOF
 EOF
 
 # Copy modules
-COPY ./zmk-antecedent-morph /zmk-antecedent-morph
+# COPY zmk-helpers /zmk-helpers
+COPY zmk-antecedent-morph /zmk-antecedent-morph
 
 COPY --chmod=755 <<EOF /bin/entrypoint.sh
 #!/usr/bin/env bash
@@ -37,9 +38,9 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
     git checkout -q --detach "\$BRANCH"
 
     echo 'Building Glove80 firmware' >&2
-    ls /zmk-antecedent-morph
     cd /config
-    nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace --arg extra_modules '"/zmk-antecedent-morph"'
+    # Add modules paths here
+    nix-build ./config --arg firmware 'import /src/default.nix {}' --arg extra_modules '"/zmk-antecedent-morph /zmk-auto-layer"' -j2 -o /tmp/combined --show-trace
     install -o "\$UID" -g "\$GID" /tmp/combined/glove80.uf2 ./glove80.uf2
 EOF
 
