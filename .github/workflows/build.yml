@@ -22,7 +22,7 @@ jobs:
           name: moergo-glove80-zmk-dev
           skipPush: true
       - name: Build Glove80 combined firmware
-        run: nix-build config -o combined --arg extra_modules '"zmk-antecedent-morph"'
+        run: nix-build config -o combined --arg extra_modules '"./zmk-antecedent-morph"'
       - name: Copy result out of nix store
         run: cp combined/glove80.uf2 glove80.uf2
       - name: Upload result

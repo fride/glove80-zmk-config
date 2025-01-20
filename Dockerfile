@@ -23,6 +23,9 @@ RUN <<EOF
     done
 EOF
 
+# Copy modules
+COPY ./zmk-antecedent-morph /zmk-antecedent-morph
+
 COPY --chmod=755 <<EOF /bin/entrypoint.sh
 #!/usr/bin/env bash
     set -euo pipefail
@@ -34,8 +37,9 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
     git checkout -q --detach "\$BRANCH"
 
     echo 'Building Glove80 firmware' >&2
+    ls /zmk-antecedent-morph
     cd /config
-    nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace
+    nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace --arg extra_modules '"/zmk-antecedent-morph"'
     install -o "\$UID" -g "\$GID" /tmp/combined/glove80.uf2 ./glove80.uf2
 EOF
 
