@@ -1,0 +1,3 @@
+[submodule "zmk-antecedent-morph"]
+	path = zmk-antecedent-morph
+	url = https://github.com/ssbb/zmk-antecedent-morph
