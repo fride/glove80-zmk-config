@@ -1,0 +1,15 @@
+/ {
+  behaviors {
+        ad_rep_magic: ad_rep_magic {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "ad_rep_magic";
+            #binding-cells = <0>;
+            defaults = <&key_repeat>;
+            bindings = <&sk LSHFT>
+                     , <&kp L>
+                     ;
+            antecedents = <SPACE R >;
+            max-delay-ms = <500>;
+        };
+  };
+};
