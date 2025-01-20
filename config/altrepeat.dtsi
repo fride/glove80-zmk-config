@@ -2,13 +2,11 @@
   behaviors {
         ad_rep_magic: ad_rep_magic {
             compatible = "zmk,behavior-antecedent-morph";
-            label = "ad_rep_magic";
+            label = "AD_REP_MAGIC";
             #binding-cells = <0>;
-            defaults = <&key_repeat>;
-            bindings = <&sk LSHFT>
-                     , <&kp L>
-                     ;
-            antecedents = <SPACE R >;
+            defaults = <&kp A>;
+            bindings = <&kp U>, <&kp O>;
+            antecedents = <O Z>;
             max-delay-ms = <500>;
         };
   };
