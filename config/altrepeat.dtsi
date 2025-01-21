@@ -4,9 +4,9 @@
             compatible = "zmk,behavior-antecedent-morph";
             label = "AD_REP_MAGIC";
             #binding-cells = <0>;
-            defaults = <&kp A>;
-            bindings = <&kp U>, <&kp O>;
-            antecedents = <O Z>;
+            defaults = <&kp H>;
+            bindings = <&kp F>, <&kp R>, <&kp C>, <&kp T>, <&kp O>;
+            antecedents = <A B C D E>;
             max-delay-ms = <500>;
         };
   };
