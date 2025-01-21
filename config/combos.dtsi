@@ -1,0 +1,75 @@
+
+
+#define COMBO_LAYER(NAME, BINDINGS, KEYPOS, LAYERS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <LAYERS>; \
+    timeout-ms = <55>; \
+};
+
+#define COMBO_ANY(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    timeout-ms = <55>; \
+};
+
+/*    KEY POSITION Names
+    ╭─────────────────────╮ ╭─────────────────────╮
+LT5 │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │ RT5
+LM5 │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │ RM5
+LB5 │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │ RB5
+    ╰───────╮ LH3 LH2 LH1 | | RH1 RH2 RH3 ╭───────╯
+            ╰─────────────╯ ╰─────────────╯
+
+Combos from urob - but the well on the glove makes them no so nice to type.
+*/
+
+
+combos {
+    compatible = "zmk,combos";
+
+    /* Horizontal combos - left hand TODO! */
+
+
+    COMBO_ANY(tab,    &kp TAB,        LM3 LM2 LM1)
+
+    /* Horizontal combos - right hand */
+
+    COMBO_ANY(bspc,  &kp BSPC,      RT1 RT2)
+    COMBO_ANY(del,   &kp DEL,       RT2 RT3)
+
+    COMBO_ANY(lpar,     &LParen,      RM1 RM2)
+    COMBO_ANY(rpar,     &RParen,      RM2 RM3)
+    COMBO_ANY(lt,       &kp LT,        RM1 RM2)
+    COMBO_ANY(gt,       &kp GT,        RM2 RM3)
+    COMBO_ANY(enter,    &kp ENTER,        RM1 RM2 RM3)
+
+    COMBO_ANY(lbkt,  &kp LBKT,      RB1 RB2)
+    COMBO_ANY(rbkt,  &kp RBKT,      RB2 RB3)
+    COMBO_ANY(lbrc,  &kp LBRC,      RB1 RB2)
+    COMBO_ANY(rbrc,  &kp RBRC,      RB2 RB3)
+
+   /* Vertical combos - left hand */
+    COMBO_ANY(at        ,&kp AT         ,LT3 LM3)
+    COMBO_ANY(hash      ,&kp HASH       ,LT2 LM2)
+    COMBO_ANY(dllr      ,&kp DLLR       ,LT1 LM1)
+    COMBO_ANY(prcnt     ,&kp PRCNT      ,LT0 LM0)
+
+    COMBO_ANY(grv       ,&kp GRAVE      ,LM3 LB3)
+    COMBO_ANY(bslh      ,&kp BSLH       ,LM2 LB2)
+    COMBO_ANY(equal     ,&kp EQUAL      ,LM1 LB1)
+    COMBO_ANY(tilde     ,&kp TILDE      ,LM0 LB0)
+   
+   /* Vertical combos - right hand */
+    COMBO_ANY(caret     ,&kp CARET          ,RT0 RM0)
+    COMBO_ANY(plus      ,&kp PLUS           ,RT1 RM1)
+    COMBO_ANY(STAR      ,&kp STAR           ,RT2 RM2)
+    COMBO_ANY(amps      ,&kp AMPS           ,RT3 RM3)
+
+    COMBO_ANY(under     ,&kp UNDER          ,RM0 RB0)
+    COMBO_ANY(minus     ,&kp MINUS          ,RM1 RB1)
+    COMBO_ANY(fslh      ,&kp FSLH           ,RM2 RB2)
+    COMBO_ANY(pipe      ,&kp PIPE           ,RM3 RB3)
+};

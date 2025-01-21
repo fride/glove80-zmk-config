@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #include "glove80.h"
-#include "altrepeat.dtsi"
+
 
 #define my_tapping_term 170
 #define my_quick_tapping_term 55
@@ -23,20 +23,37 @@
 #define DEFAULT       0
 #define ALPHA2        1
 #define LOWER         2
-#define LAYER_CONFIG  3
-#define FACTORY_TEST  4
+#define NUMBER        3
+#define LAYER_CONFIG  4
+#define FACTORY_TEST  5
 
 // #define CONFIG &config_layer LAYER_CONFIG 0
 #define NAV_SPC &lt LOWER SPACE
 #define PUQ &sl ALPHA2
+#define NUM &sl NUMBER
 
+#define HOME_R &hml LCTL R
+#define HOME_T &hml LALT T
+#define HOME_S &hml LGUI S
+#define HOME_W &lt NUMBER W
+
+#define HOME_M &hmr LGUI M
+#define HOME_E &hmr LALT E
+#define HOME_I &hmr LCTL I
+
+#include "altrepeat.dtsi"
+
+
+
+// see https://github.com/theol0403/anachron-zmk-config/blob/master/config/rollow.keymap
 #define     my_hrm_config \
             compatible = "zmk,behavior-hold-tap"; \
             #binding-cells = <2>; \
             flavor = "balanced"; \
             hold-trigger-on-release; \
-            tapping-term-ms = <my_tapping_term>; \
-            quick-tap-ms = <my_quick_tapping_term>
+            tapping-term-ms = <500>; \
+            quick-tap-ms = <175>; \
+            require-prior-idle-ms = <200>
 
 &mt {
     tapping-term-ms = <my_tapping_term>;
@@ -52,6 +69,20 @@
 &sk { quick-release; };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <LM4 LM3>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+/ {
+
+    #include "combos.dtsi"
+
     behaviors {
 
         config_layer: config_hold_tap {
@@ -81,22 +112,29 @@
             bindings = <&mo LOWER>, <&to LOWER>;
         };
 
-
-         hm: homerow_mods { // use on either hand
-            my_hrm_config;
-            bindings = <&kp>, <&kp>;
-        };
-
         hmr: homerow_mods_right { // use on right hand to mod left
-            my_hrm_config;
+            my_hrm_config;            
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>; // left hand allowed
         };
 
         hml: homerow_mods_left { // use on left hand to mod right
             my_hrm_config;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&kp>;            
             hold-trigger-key-positions = <KEYS_R THUMBS>; // right hand allowed
+        };
+
+        LParen: LParen {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        RParen: RParen {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -170,9 +208,9 @@
             &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                   &kp F6         &kp F7      &kp F8      &kp F9      &kp F10
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                          &kp N6     &kp N7         &kp N8      &kp N9      &kp N0      &kp MINUS
             &kp TAB        &kp Q    &kp L       &kp D       &kp C         &kp V                                                                           &kp K      &ad_rep_magic  &kp O       &kp U       &kp J       &kp BSLH
-            &kp Q          &kp N    &kp R       &kp T       &kp S         &kp G                                                                           &kp F      &kp M          &kp E       &kp I       &kp A       &kp J
+            &kp Q          &kp N    HOME_R      HOME_T      HOME_S        &kp G                                                                           &kp F      HOME_M         HOME_E      HOME_I      &kp A       &kp J
             &kp GRAVE      &kp B    &kp X       &kp P       &kp W         &kp Z   &kp LSFT    &kp LCTRL   &bootloader  &bootloader  &kp RCTRL &kp LSFT    &kp SQT    &kp H          &kp COMMA   &kp DOT     &kp Y       &kp PG_UP
-            CONFIG         &kp HOME &kp END     &kp LEFT    &kp X                 NAV_SPC     PUQ         &kp LALT     &kp RALT     PUQ       &skq LSFT              &kp UP         &kp DOWN    &kp LBKT    &kp RBKT    CONFIG
+            CONFIG         &kp HOME &kp END     &kp LEFT    &kp X                 NAV_SPC     NUM         &kp LALT     &kp RALT     PUQ       &skq LSFT              &kp UP         &kp DOWN    &kp LBKT    &kp RBKT    CONFIG
             >;
         };
 
@@ -195,6 +233,16 @@
             &trans            &skq LSFT           &skq LCTL       &skq LALT       &skq LGUI       &kp PG_UP                                                                             &kp TAB      &kp LEFT      &kp DOWN     &kp RIGHT     &kp ENTER       &none
             &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &trans      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1     &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
             &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0     &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+            >;
+        };
+        number_layer {
+            bindings = <
+            &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE    &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
+            &trans            &none               &none           &none           &none         &kp HOME                                                                              &kp LPAR     &kp KP_NUM    &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
+            &trans            &none               &none           &kp UP          &none         &kp END                                                                               &kp RPAR     &kp N7        &kp N8       &kp N9        &kp KP_MINUS    &kp SLCK
+            &trans            &skq LSFT           &skq LCTL       &skq LALT       &none         &kp PG_UP                                                                             &kp TAB      &kp N4        &kp N5       &kp N6        &kp ENTER       &none
+            &trans            &none               &none           &skq LGUI       &none         &kp PG_DN       &trans      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp N1        &kp N2       &kp N3        &kp KP_ENTER    &trans
+            &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                       &trans      &trans      &trans      &trans      &trans      &kp N0                 &kp KP_N0     &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
             >;
         };
 

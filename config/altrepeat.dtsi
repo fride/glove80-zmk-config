@@ -17,17 +17,22 @@
                      , <&kp A> // J -> JA
                      , <&kp T> // K -> KT // TODO?!
                      , <&kp R> // L -> LR
-                     , <&kp R> // L -> LR
-                     , <&kp B> // B -> BN
+                     , <&kp R> // N -> LR                     
                      , <&kp E> // O -> OE
                      , <&kp T> // P -> PT
-                     , <&kp L> // L -> LR
+                     , <&kp L> // R -> LR
                      , <&ch>   // S -> SCH
                      , <&kp D> // T -> DT
                      , <&kp I> // U -> UI
                      , <&ou>   // Y -> OU
+                     // controll stuff!
+                     , <&kp LC(K)>
                      ;
-            antecedents = <A B C D E F G H I J K L N O P R S T U Y>;
+            antecedents = <
+                A B C D E F G H I J K L N O P R S T U Y
+                LCTL(A)
+            
+            >;
             max-delay-ms = <500>;
         };
   };
