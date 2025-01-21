@@ -5,8 +5,28 @@
             label = "AD_REP_MAGIC";
             #binding-cells = <0>;
             defaults = <&kp H>;
-            bindings = <&kp F>, <&kp R>, <&kp C>, <&kp T>, <&kp O>;
-            antecedents = <A B C D E>;
+            bindings = <&kp F> // A
+                     , <&kp R> // B
+                     , <&kp C> // C
+                     , <&kp T> // D
+                     , <&kp O> // E                
+                     , <&kp K> // F
+                     , <&kp T> // G
+                     , <&kp H> // H -> some key so nothing ;)                     
+                     , <&kp U> // I -> IU
+                     , <&kp A> // J -> JA
+                     , <&kp T> // K -> KT // TODO?!
+                     , <&kp R> // L -> LR
+                     , <&kp R> // L -> LR
+                     , <&kp B> // B -> BN
+                     , <&kp E> // O -> OE
+                     , <&kp T> // P -> PT
+                     , <&kp L> // L -> LR
+                     , <&ch>   // S -> SCH
+                     , <&kp D> // T -> DT
+                     , <&kp I> // U -> UI
+                     ;
+            antecedents = <A B C D E F G H I J K L N O P R S T U>;
             max-delay-ms = <500>;
         };
   };

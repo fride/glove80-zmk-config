@@ -101,6 +101,15 @@
     };
 
     macros {
+
+        ch: ch {
+            label = "CH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp C>
+                     , <&kp H>;
+        };
+
         rgb_ug_status_macro: rgb_ug_status_macro {
             label = "RGB_UG_STATUS";
             compatible = "zmk,behavior-macro";
@@ -153,7 +162,7 @@
             &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                   &kp F6         &kp F7      &kp F8      &kp F9      &kp F10
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                          &kp N6     &kp N7         &kp N8      &kp N9      &kp N0      &kp MINUS
             &kp TAB        &kp Q    &kp L       &kp D       &kp C         &kp V                                                                           &kp K      &ad_rep_magic  &kp O       &kp U       &kp J       &kp BSLH
-            &kp ESC        &kp N    &kp R       &kp T       &kp S         &kp G                                                                           &kp F      &kp M          &kp E       &kp I       &kp A       &kp SQT
+            &kp Q          &kp N    &kp R       &kp T       &kp S         &kp G                                                                           &kp F      &kp M          &kp E       &kp I       &kp A       &kp J
             &kp GRAVE      &kp B    &kp X       &kp P       &kp W         &kp Z   &kp LSFT    &kp LCTRL   &bootloader  &bootloader  &kp RCTRL &kp LSFT    &kp SQT    &kp H          &kp COMMA   &kp DOT     &kp Y       &kp PG_UP
             CONFIG         &kp HOME &kp END     &kp LEFT    &kp X                 NAV_SPC     PUQ         &kp LALT     &kp RALT     PUQ       &skq LSFT              &kp UP         &kp DOWN    &kp LBKT    &kp RBKT    CONFIG
             >;
@@ -164,7 +173,7 @@
             &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                                   &kp F6         &kp F7      &kp F8      &kp F9      &kp F10
             &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4        &kp N5                                                                          &kp N6     &kp N7         &kp N8      &kp N9      &kp N0      &kp MINUS
             &kp TAB        &kp Q    &kp L       &kp D       &kp C         &kp V                                                                           &kp K      &ad_rep_magic  &kp RA(O)   &kp RA(U)   &kp J       &kp BSLH
-            &kp ESC        &kp N    &kp R       &kp T       &kp S         &kp G                                                                           &kp F      &kp M          &kp E       &kp I       &kp RA(A)   &kp SQT
+            &kp ESC        &kp N    &kp R       &kp T       &kp RA(S)     &kp G                                                                           &kp F      &kp M          &kp E       &kp I       &kp RA(A)   &kp SQT
             &kp GRAVE      &kp B    &kp X       &kp P       &kp W         &kp Z   &kp LSFT    &kp LCTRL   &bootloader  &bootloader  &kp RCTRL &kp LSFT    &kp SQT    &kp H          &kp COMMA   &kp DOT     &kp Y       &kp PG_UP
             CONFIG         &kp HOME &kp END     &kp LEFT    &kp X                 NAV_SPC     &kp DEL     &kp LALT     &kp RALT     PUQ       &skq LSFT              &kp UP         &kp DOWN    &kp LBKT    &kp RBKT    CONFIG
             >;
