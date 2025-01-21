@@ -25,8 +25,9 @@
                      , <&ch>   // S -> SCH
                      , <&kp D> // T -> DT
                      , <&kp I> // U -> UI
+                     , <&ou>   // Y -> OU
                      ;
-            antecedents = <A B C D E F G H I J K L N O P R S T U>;
+            antecedents = <A B C D E F G H I J K L N O P R S T U Y>;
             max-delay-ms = <500>;
         };
   };
