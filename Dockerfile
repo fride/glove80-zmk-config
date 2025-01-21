@@ -26,6 +26,7 @@ EOF
 # Copy modules
 # COPY zmk-helpers /zmk-helpers
 COPY zmk-antecedent-morph /zmk-antecedent-morph
+COPY zmk-auto-layer /zmk-auto-layer
 
 COPY --chmod=755 <<EOF /bin/entrypoint.sh
 #!/usr/bin/env bash
@@ -40,7 +41,7 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
     echo 'Building Glove80 firmware' >&2
     cd /config
     # Add modules paths here
-    nix-build ./config --arg firmware 'import /src/default.nix {}' --arg extra_modules '"/zmk-antecedent-morph /zmk-auto-layer"' -j2 -o /tmp/combined --show-trace
+    nix-build ./config --arg firmware 'import /src/default.nix {}' --arg extra_modules '"/zmk-antecedent-morph;/zmk-auto-layer"' -j2 -o /tmp/combined --show-trace
     install -o "\$UID" -g "\$GID" /tmp/combined/glove80.uf2 ./glove80.uf2
 EOF
 

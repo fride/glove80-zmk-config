@@ -30,6 +30,11 @@ Combos from urob - but the well on the glove makes them no so nice to type.
 combos {
     compatible = "zmk,combos";
 
+    /* thumbs */
+
+    
+    COMBO_ANY(num_word_t,    &tog NUMBER,        LH3 RH3)
+
     /* Horizontal combos - left hand TODO! */
 
 
